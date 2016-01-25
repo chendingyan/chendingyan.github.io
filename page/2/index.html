@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   
-  <title>SQL笔记 | Chendingyan&#39;s Blog</title>
+  <title>第 2 页 | Chendingyan&#39;s Blog</title>
   <meta name="author" content="Mike Chen">
   
   <meta name="description" content="It&#39;s the Blog of Chendingyan">
@@ -11,7 +11,7 @@
   
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
-  <meta property="og:title" content="SQL笔记"/>
+  
   <meta property="og:site_name" content="Chendingyan&#39;s Blog"/>
 
   
@@ -53,7 +53,194 @@
 <div class="clearfix"></div>
 </header>
   <div id="content" class="inner">
-    <div id="main-col" class="alignleft"><div id="wrapper"><article class="post">
+    <div id="main-col" class="alignleft"><div id="wrapper">
+  <article class="post">
+  
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-01-25T11:54:27.000Z"><a href="/2016/01/25/继承/">Jan 25 2016</a></time>
+      
+      
+  
+    <h1 class="title"><a href="/2016/01/25/继承/">Java学习 继承</a></h1>
+  
+
+    </header>
+    <div class="entry">
+      
+        <p>#继承</p>
+<p>@(Java预习)</p>
+<hr>
+<p>对理解继承来说，最重要的事情是，知道哪些东西被继承了，或者说，子类从父类那里得到了什么。答案是：所有的东西，所有的父类的成员，包括变量和方法，都成为了子类的成员，除了构造方法。构造方法是父类所独有的，因为它们的名字就是类的名字，所以父类的构造方法在子类中不存在。除此之外，子类继承得到了父类所有的成员。<br>但是得到不等于可以随便使用。每个成员有不同的访问属性，子类继承得到了父类所有的成员，但是不同的访问属性使得子类在使用这些成员时有所不同：有些父类的成员直接成为子类的对外的界面，有些则被深深地隐藏起来，即使子类自己也不能直接访问。下表列出了不同访问属性的父类成员在子类中的访问属性：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">父类成员访问属性</th>
+<th style="text-align:center">在父类中的含义</th>
+<th style="text-align:center">在子类中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">对所有人开放</td>
+<td style="text-align:center">对所有人开放</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">只有包内其它类、自己和子类可以访问</td>
+<td style="text-align:center">只有包内其它类、自己和子类可以访问</td>
+</tr>
+<tr>
+<td style="text-align:center">缺省</td>
+<td style="text-align:center">只有包内其它类可以访问</td>
+<td style="text-align:center">如果子类与父类在同一个包内：只有包内其它类可以访问<br>否则：相当于private，不能访问</td>
+</tr>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">只有自己可以访问</td>
+<td style="text-align:center">不能访问</td>
+</tr>
+</tbody>
+</table>
+<p>public的成员直接成为子类的public的成员，protected的成员也直接成为子类的protected的成员。Java的protected的意思是包内和子类可访问，所以它比缺省的访问属性要宽一些。而对于父类的缺省的未定义访问属性的成员来说，他们是在父类所在的包内可见，如果子类不属于父类的包，那么在子类里面，这些缺省属性的成员和private的成员是一样的：不可见。父类的private的成员在子类里仍然是存在的，只是子类中不能直接访问。我们不可以在子类中重新定义继承得到的成员的访问属性。如果我们试图重新定义一个在父类中已经存在的成员变量，那么我们是在定义一个与父类的成员变量完全无关的变量，在子类中我们可以访问这个定义在子类中的变量，在父类的方法中访问父类的那个。尽管它们同名但是互不影响。</p>
+<p>在构造一个子类的对象时，父类的构造方法也是会被调用的，而且父类的构造方法在子类的构造方法之前被调用。在程序运行过程中，子类对象的一部分空间存放的是父类对象。因为子类从父类得到继承，在子类对象初始化过程中可能会使用到父类的成员。所以父类的空间正是要先被初始化的，然后子类的空间才得到初始化。在这个过程中，如果父类的构造方法需要参数，如何传递参数就很重要了。</p>
+<p>##面向对象程序设计语言有三大特性：封装、继承和多态性<br>继承提供了代码重用和程序组织的有力工具<br>用来做基础派生其它类的那个类叫做父类、超类或者基类，而派生出来的新类叫做子类</p>
+<p>##子类父类关系</p>
+<pre><code>class ThisClass extends SuperClass {...}
+</code></pre><p>Java 的继承只允许单继承，即一个类只能有一个父类</p>
+<p>##一个继承的例子（包括了extends super等用法）</p>
+<pre><code>// Database.java
+import java.util.ArrayList;
+
+public class Database {
+    private ArrayList&lt;Item&gt; listItem = new ArrayList&lt;Item&gt;();
+
+    public void add(Item item) {
+        listItem.add(item);
+    }
+
+    public void list() {
+        for (Item item: listItem) {
+            item.print();
+        }
+    }
+
+    public static void main(String[] args) {
+        Database db = new Database();
+        db.add(new MP3(&quot;abc&quot;, &quot;Amy&quot;, 360, &quot;Haha&quot;));
+        db.add(new CD(&quot;def&quot;, &quot;John&quot;, 5, 120, &quot;Hehe&quot;));
+        db.add(new DVD(&quot;xxx&quot;, &quot;Jane&quot;, 240, &quot;Heihei&quot;));
+        db.list();
+    }
+}
+// DISPLAY:
+// MP3:abc: Amy
+// CD:def: John
+// DVD:xxx: Jane
+
+// Item.java
+public class Item {
+    public String title;
+    public String author;
+    public int playingTime;
+    public String comment;
+    public boolean gotIt = false;
+
+    public Item(String title, String author, int playingTime, String comment) {
+        // super();
+        this.title = title;
+        this.author = author;
+        this.playingTime = playingTime;
+        this.comment = comment;
+    }
+    public void print() {}
+}
+
+// CD.java
+public class CD extends Item {
+    private int numOfTracks;
+    public CD(String title, String author, int numOfTracks, int playingTime, String comment) {
+        super(title, author, playingTime, comment);
+        this.numOfTracks = numOfTracks;
+    }
+
+    public void print() {
+        System.out.println(&quot;CD:&quot; + title + &quot;: &quot; + author);
+    }
+}
+
+// DVD.java
+public class DVD extends Item {
+    public DVD(String title, String author, int playingTime, String comment) {
+        super(title, author, playingTime, comment);
+    }
+
+    public void print() {
+        System.out.println(&quot;DVD:&quot; + title + &quot;: &quot; + author);
+    }
+}
+
+// MP3.java
+public class MP3 extends Item {
+
+    public MP3(String title, String author, int playingTime, String comment) {
+        super(title, author, playingTime, comment);
+    }
+
+    public void print() {
+        System.out.println(&quot;MP3:&quot; + title + &quot;: &quot; + author);
+    }
+}
+</code></pre><p>##Java中的单继承</p>
+<ol>
+<li>Java是单继承的，即一个子类只能有一个父类；有些其他的编程语言是多继承的；</li>
+<li>比如Car类 的子类是Bus类，这个时候再增加一个类叫做ElectronicBus， 是继承Bus类的，只不过多了车厢数量， 那么现在形成的关系是多次继承。 Car类就像爷爷一样，这时候Car是祖先类，Java是允许多次一直继承下去的。</li>
+</ol>
+<p>##在创造了一个子类的同时，也创造了一个父类！</p>
+<p>子类的创建会同时创建父类，那就是类的构造方法！他会调用那个构造函数！<br>具体例子详见P262；</p>
+<p>##Super关键字！<br>super关键字可以在子类构造方法中使用，用来指定调用父类中的某个构造方法， 其语法如下：<br>super(参数值列表);<br>这里的参数值列表必须与父类中的某个构造函数匹配，看上去和使用this关键字调用同一个类中不同构造函数的语法是相同的；</p>
+<pre><code>e.g. 以下代码是等价的；
+代码1：
+public class Sportscar extends Car{
+    public int nAmount = 90;
+    public SportsCar(){
+        System.out.println(&quot;SportsCar类的构造方法被调用了！&quot;)
+    }
+    //其他内容被省略
+}
+
+代码2：
+    public class Sportscar extends Car{
+    public int nAmount = 90;
+    public SportsCar(){
+        super（）；//调用父类中无参数的构造方法；
+        System.out.println(&quot;SportsCar类的构造方法被调用了！&quot;)
+    }
+    //其他内容被省略
+}
+</code></pre><p>###记得给类一个无参数的构造方法<br>如果某一个父类已经定义了另一种有参数的构造方法，那么按照Java编译器的规则， 就不会再自动创建一个无参数的构造方法，那么super();就会出错。<br>因此，遇到这种情况，要自己定义一个无参数的构造函数，有两个构造函数也是允许的。</p>
+<p>###调用父类中的构造方法；<br>那么有不有可能调用父类的有参数的构造方法？<br>之前super();调用了一个没参数的构造函数；<br>那么同理，把参数写在Super里面，就可以调用有参数的构造函数了。</p>
+<p>e.g.  初始化的时候 new sportscar(“红色”，“法拉利”，“200”)；</p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+  <article class="post">
   
   <div class="post-content">
     <header>
@@ -63,7 +250,7 @@
       
       
   
-    <h1 class="title">SQL笔记</h1>
+    <h1 class="title"><a href="/2016/01/25/SQL from codecademy/">SQL笔记</a></h1>
   
 
     </header>
@@ -246,24 +433,6 @@
       
         
         
-        
-  <div class="addthis addthis_toolbox addthis_default_style">
-    
-      <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
-    
-    
-      <a class="addthis_button_tweet"></a>
-    
-    
-      <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
-    
-    
-      <a class="addthis_button_pinterest_pinit" pi:pinit:layout="horizontal"></a>
-    
-    <a class="addthis_counter addthis_pill_style"></a>
-  </div>
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js"></script>
-
       
       <div class="clearfix"></div>
     </footer>
@@ -271,27 +440,57 @@
 </article>
 
 
-<section id="comment">
-  <h1 class="title">留言</h1>
 
+
+  <article class="post">
   
-      <div id="fb-root"></div>
-<script>
-  (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) return;
-    js = d.createElement(s); js.id = id;
-    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=123456789012345";
-    fjs.parentNode.insertBefore(js, fjs);
-  }(document, 'script', 'facebook-jssdk'));
-</script>
-
-<div class="fb-comments" data-href="blog.mikecdy.com/2016/01/25/SQL from codecademy/index.html" data-num-posts="5" data-width="840" data-colorscheme="light"></div>
+  <div class="post-content">
+    <header>
+      
+        <div class="icon"></div>
+        <time datetime="2016-01-25T08:41:28.000Z"><a href="/2016/01/25/hello-world/">Jan 25 2016</a></time>
+      
       
   
-</section>
+    <h1 class="title"><a href="/2016/01/25/hello-world/">Hello World</a></h1>
+  
 
-</div></div>
+    </header>
+    <div class="entry">
+      
+        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+      
+    </div>
+    <footer>
+      
+        
+        
+      
+      <div class="clearfix"></div>
+    </footer>
+  </div>
+</article>
+
+
+
+
+
+<nav id="pagination">
+  
+    <a href="/" class="alignleft prev">上一页</a>
+  
+  
+  <div class="clearfix"></div>
+</nav></div></div>
     <aside id="sidebar" class="alignright">
   <div class="search">
   <form action="//google.com/search" method="get" accept-charset="utf-8">
