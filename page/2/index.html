@@ -231,7 +231,7 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T19:54:27+08:00" content="Jan 25 2016">
+            <time itemprop="dateCreated" datetime="2016-01-25T21:53:07+08:00" content="Jan 25 2016">
               Jan 25 2016
             </time>
           </span>
@@ -277,163 +277,13 @@
 
       
         
-          
-            <p>#继承</p>
-<p>@(Java预习)</p>
-<hr>
-<p>对理解继承来说，最重要的事情是，知道哪些东西被继承了，或者说，子类从父类那里得到了什么。答案是：所有的东西，所有的父类的成员，包括变量和方法，都成为了子类的成员，除了构造方法。构造方法是父类所独有的，因为它们的名字就是类的名字，所以父类的构造方法在子类中不存在。除此之外，子类继承得到了父类所有的成员。<br>但是得到不等于可以随便使用。每个成员有不同的访问属性，子类继承得到了父类所有的成员，但是不同的访问属性使得子类在使用这些成员时有所不同：有些父类的成员直接成为子类的对外的界面，有些则被深深地隐藏起来，即使子类自己也不能直接访问。下表列出了不同访问属性的父类成员在子类中的访问属性：</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:center">父类成员访问属性</th>
-<th style="text-align:center">在父类中的含义</th>
-<th style="text-align:center">在子类中的含义</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:center">public</td>
-<td style="text-align:center">对所有人开放</td>
-<td style="text-align:center">对所有人开放</td>
-</tr>
-<tr>
-<td style="text-align:center">protected</td>
-<td style="text-align:center">只有包内其它类、自己和子类可以访问</td>
-<td style="text-align:center">只有包内其它类、自己和子类可以访问</td>
-</tr>
-<tr>
-<td style="text-align:center">缺省</td>
-<td style="text-align:center">只有包内其它类可以访问</td>
-<td style="text-align:center">如果子类与父类在同一个包内：只有包内其它类可以访问<br>否则：相当于private，不能访问</td>
-</tr>
-<tr>
-<td style="text-align:center">private</td>
-<td style="text-align:center">只有自己可以访问</td>
-<td style="text-align:center">不能访问</td>
-</tr>
-</tbody>
-</table>
-<p>public的成员直接成为子类的public的成员，protected的成员也直接成为子类的protected的成员。Java的protected的意思是包内和子类可访问，所以它比缺省的访问属性要宽一些。而对于父类的缺省的未定义访问属性的成员来说，他们是在父类所在的包内可见，如果子类不属于父类的包，那么在子类里面，这些缺省属性的成员和private的成员是一样的：不可见。父类的private的成员在子类里仍然是存在的，只是子类中不能直接访问。我们不可以在子类中重新定义继承得到的成员的访问属性。如果我们试图重新定义一个在父类中已经存在的成员变量，那么我们是在定义一个与父类的成员变量完全无关的变量，在子类中我们可以访问这个定义在子类中的变量，在父类的方法中访问父类的那个。尽管它们同名但是互不影响。</p>
-<p>在构造一个子类的对象时，父类的构造方法也是会被调用的，而且父类的构造方法在子类的构造方法之前被调用。在程序运行过程中，子类对象的一部分空间存放的是父类对象。因为子类从父类得到继承，在子类对象初始化过程中可能会使用到父类的成员。所以父类的空间正是要先被初始化的，然后子类的空间才得到初始化。在这个过程中，如果父类的构造方法需要参数，如何传递参数就很重要了。</p>
-<p>##面向对象程序设计语言有三大特性：封装、继承和多态性<br>继承提供了代码重用和程序组织的有力工具<br>用来做基础派生其它类的那个类叫做父类、超类或者基类，而派生出来的新类叫做子类</p>
-<p>##子类父类关系</p>
-<pre><code>class ThisClass extends SuperClass {...}
-</code></pre><p>Java 的继承只允许单继承，即一个类只能有一个父类</p>
-<p>##一个继承的例子（包括了extends super等用法）</p>
-<pre><code>// Database.java
-import java.util.ArrayList;
-
-public class Database {
-    private ArrayList&lt;Item&gt; listItem = new ArrayList&lt;Item&gt;();
-
-    public void add(Item item) {
-        listItem.add(item);
-    }
-
-    public void list() {
-        for (Item item: listItem) {
-            item.print();
-        }
-    }
-
-    public static void main(String[] args) {
-        Database db = new Database();
-        db.add(new MP3(&quot;abc&quot;, &quot;Amy&quot;, 360, &quot;Haha&quot;));
-        db.add(new CD(&quot;def&quot;, &quot;John&quot;, 5, 120, &quot;Hehe&quot;));
-        db.add(new DVD(&quot;xxx&quot;, &quot;Jane&quot;, 240, &quot;Heihei&quot;));
-        db.list();
-    }
-}
-// DISPLAY:
-// MP3:abc: Amy
-// CD:def: John
-// DVD:xxx: Jane
-
-// Item.java
-public class Item {
-    public String title;
-    public String author;
-    public int playingTime;
-    public String comment;
-    public boolean gotIt = false;
-
-    public Item(String title, String author, int playingTime, String comment) {
-        // super();
-        this.title = title;
-        this.author = author;
-        this.playingTime = playingTime;
-        this.comment = comment;
-    }
-    public void print() {}
-}
-
-// CD.java
-public class CD extends Item {
-    private int numOfTracks;
-    public CD(String title, String author, int numOfTracks, int playingTime, String comment) {
-        super(title, author, playingTime, comment);
-        this.numOfTracks = numOfTracks;
-    }
-
-    public void print() {
-        System.out.println(&quot;CD:&quot; + title + &quot;: &quot; + author);
-    }
-}
-
-// DVD.java
-public class DVD extends Item {
-    public DVD(String title, String author, int playingTime, String comment) {
-        super(title, author, playingTime, comment);
-    }
-
-    public void print() {
-        System.out.println(&quot;DVD:&quot; + title + &quot;: &quot; + author);
-    }
-}
-
-// MP3.java
-public class MP3 extends Item {
-
-    public MP3(String title, String author, int playingTime, String comment) {
-        super(title, author, playingTime, comment);
-    }
-
-    public void print() {
-        System.out.println(&quot;MP3:&quot; + title + &quot;: &quot; + author);
-    }
-}
-</code></pre><p>##Java中的单继承</p>
-<ol>
-<li>Java是单继承的，即一个子类只能有一个父类；有些其他的编程语言是多继承的；</li>
-<li>比如Car类 的子类是Bus类，这个时候再增加一个类叫做ElectronicBus， 是继承Bus类的，只不过多了车厢数量， 那么现在形成的关系是多次继承。 Car类就像爷爷一样，这时候Car是祖先类，Java是允许多次一直继承下去的。</li>
-</ol>
-<p>##在创造了一个子类的同时，也创造了一个父类！</p>
-<p>子类的创建会同时创建父类，那就是类的构造方法！他会调用那个构造函数！<br>具体例子详见P262；</p>
-<p>##Super关键字！<br>super关键字可以在子类构造方法中使用，用来指定调用父类中的某个构造方法， 其语法如下：<br>super(参数值列表);<br>这里的参数值列表必须与父类中的某个构造函数匹配，看上去和使用this关键字调用同一个类中不同构造函数的语法是相同的；</p>
-<pre><code>e.g. 以下代码是等价的；
-代码1：
-public class Sportscar extends Car{
-    public int nAmount = 90;
-    public SportsCar(){
-        System.out.println(&quot;SportsCar类的构造方法被调用了！&quot;)
-    }
-    //其他内容被省略
-}
-
-代码2：
-    public class Sportscar extends Car{
-    public int nAmount = 90;
-    public SportsCar(){
-        super（）；//调用父类中无参数的构造方法；
-        System.out.println(&quot;SportsCar类的构造方法被调用了！&quot;)
-    }
-    //其他内容被省略
-}
-</code></pre><p>###记得给类一个无参数的构造方法<br>如果某一个父类已经定义了另一种有参数的构造方法，那么按照Java编译器的规则， 就不会再自动创建一个无参数的构造方法，那么super();就会出错。<br>因此，遇到这种情况，要自己定义一个无参数的构造函数，有两个构造函数也是允许的。</p>
-<p>###调用父类中的构造方法；<br>那么有不有可能调用父类的有参数的构造方法？<br>之前super();调用了一个没参数的构造函数；<br>那么同理，把参数写在Super里面，就可以调用有参数的构造函数了。</p>
-<p>e.g.  初始化的时候 new sportscar(“红色”，“法拉利”，“200”)；</p>
-
-          
+          <p>#继承</p>
+<p><blockquote class="blockquote-center"><br>What is Inheritance?<br>What is constructor?<br></blockquote><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/25/继承/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -473,8 +323,8 @@ public class Sportscar extends Car{
             
               
                 
-                <a class="post-title-link" href="/2016/01/25/SQL from codecademy/" itemprop="url">
-                  SQL笔记
+                <a class="post-title-link" href="/2016/01/25/对象容器/" itemprop="url">
+                  Java学习 对象容器
                 </a>
               
             
@@ -487,11 +337,30 @@ public class Sportscar extends Car{
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T17:08:24+08:00" content="Jan 25 2016">
+            <time itemprop="dateCreated" datetime="2016-01-25T21:52:07+08:00" content="Jan 25 2016">
               Jan 25 2016
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -514,179 +383,12 @@ public class Sportscar extends Car{
 
       
         
-          
-            <h2 id="23SQL_Language_learning"><a href="#23SQL_Language_learning" class="headerlink" title="#SQL Language learning"></a>#SQL Language learning</h2><p>##what is SQL?</p>
-<blockquote>
-<p>SQL, ‘Structured Query Language’, is a programming language designed to manage data stored in relational databases. SQL operates through simple, declarative statements. This keeps data accurate and secure, and helps maintain the integrity of databases, regardless of size.</p>
-<p>The SQL language is widely used today across web frameworks and database applications. Knowing SQL gives you the freedom to explore your data, and the power to make better decisions. By learning SQL, you will also learn concepts that apply to nearly every data storage system.</p>
-</blockquote>
-<p>##relational database?</p>
-<blockquote>
-<p>A relational database is a database that organizes information into one or more tables. Here the relational database contains one table.</p>
-</blockquote>
-<p>##table?</p>
-<blockquote>
-<p>A table is a collection of data organized into rows and columns. Tables are sometimes referred to as relations. </p>
-</blockquote>
-<p>##row and coloum?</p>
-<blockquote>
-<p>A column is a set of data values of a particular type. Here id, name, and age are each columns. </p>
-<p>A row is a single record in a table. The first row in the celebs table has:</p>
-<p>An id of 1<br><br>A name of Justin Bieber<br><br>An age of 22</p>
-</blockquote>
-<p>##data type in SQL</p>
-<blockquote>
-<p>All data stored in a relational database is of a certain data type. Some of the most common data types are:</p>
-<ol>
-<li>Integer, a positive or negative whole number </li>
-<li>Text, a text string </li>
-<li>Date, the date formatted as YYYY-MM-DD for the year, month, and day </li>
-<li>Real, a decimal value </li>
-</ol>
-</blockquote>
-<p>##SQL Statement</p>
-<blockquote>
-<p>A statement is text that the database recognizes as a valid command. </p>
-<p>Statements always end in a semi-colon <strong>;</strong></p>
-<p><strong>CREATE TABLE</strong></p>
-<blockquote>
-<p>CREATE TABLE is a clause. Clauses perform specific tasks in SQL. By convention, clauses are written in capital letters. Clauses can also be referred to as commands.</p>
-<p>table_name refers to the name of the table that the command is applied to.</p>
-<p>(column_1 data_type, column_2 data_type, column_3 data_type) is a parameter. A parameter is a list of columns, data types, or values that are passed to a clause as an argument. Here, the parameter is a list of column names and the associated data type.<br><img src="http://i8.tietuku.com/f28b1f8fdbd5818c.png" alt=""></p>
-</blockquote>
-<p><strong>INSERT INTO</strong></p>
-<blockquote>
-<p>之前已经创建完table了 之后需要insert信息into table</p>
-<p><img src="http://i4.tietuku.com/71b1ae29ccba7c52.png" alt=""></p>
-</blockquote>
-<p><strong>SELECT * FROM</strong></p>
-<blockquote>
-<p>查看你所创建的表中的内容</p>
-<p><img src="http://i4.tietuku.com/bbce3ddd255aa0fe.png" alt=""></p>
-<p><img src="http://i4.tietuku.com/2407c78c7dd4fa11.png" alt=""></p>
-<p>如果是写 SELECT * FROM XXX则查看的是所有内容， 当然也可以只查看某一item的内容，e.g.SELECT name FROM…</p>
-<p><img src="http://i4.tietuku.com/e658d2547a676df1.png" alt=""></p>
-</blockquote>
-<p><strong>UPDATE…SET…WHERE…</strong></p>
-<blockquote>
-<p>UPDATE可以帮助更改table中的信息</p>
-<p><img src="http://i4.tietuku.com/8000f7109514c36a.png" alt=""></p>
-</blockquote>
-<p><strong>ALTER TABLE</strong></p>
-<blockquote>
-<p>ALTER TABLE 指令可以帮助你增加row</p>
-<p><img src="http://i8.tietuku.com/a2029ba0b268a212.png" alt=""></p>
-</blockquote>
-<p><strong>DELETE FROM…WHERE…IS…</strong></p>
-<blockquote>
-<p><img src="http://i8.tietuku.com/b12af051421f5938.png" alt=""></p>
-<p><img src="http://i8.tietuku.com/80545d442ca5f9fa.png" alt=""></p>
-</blockquote>
-</blockquote>
-<p>##SUMMARY<br>Congratulations! You’ve learned <strong>six commands</strong> commonly used to manage data stored in a relational database. What can we generalize so far?</p>
-<p>SQL is a programming language designed to manipulate and manage data stored in relational databases.</p>
-<p>A relational database is a database that organizes information into one or more tables.<br>A table is a collection of data organized into rows and columns.<br>A statement is a string of characters that the database recognizes as a valid command.</p>
-<p>CREATE TABLE creates a new table.</p>
-<p>INSERT INTO adds a new row to a table.</p>
-<p>SELECT queries data from a table.</p>
-<p>UPDATE edits a row in a table.</p>
-<p>ALTER TABLE changes an existing table.</p>
-<p>DELETE FROM deletes rows from a table.</p>
-<h2 id="23_23QUERIES"><a href="#23_23QUERIES" class="headerlink" title="##QUERIES"></a>##QUERIES</h2><blockquote>
-<p><strong>SELECT DISTINCT FROM</strong></p>
-<blockquote>
-<p>可以筛选过滤 让每一种类型只出现一次</p>
-<p><img src="http://i8.tietuku.com/dbb2ea1274da008f.png" alt=""></p>
-</blockquote>
-<p><strong>SELECT…FROM…WHERE…</strong></p>
-<blockquote>
-<p>就像文字所说，选出某些特定要求的row， where 一般后面跟判断语句， 比如id == 18;<br><br><br>这样就是一直query 筛选</p>
-</blockquote>
-<p><strong>SELECT…FROM…WHERE…LIKE</strong>是一种特殊的跟在SELECT 后的operator<br>&gt;</p>
-<blockquote>
-<p><img src="http://i4.tietuku.com/d505cc79c5ed5047.png" alt=""></p>
-<p><img src="http://i4.tietuku.com/5a93fd8f2f824b0c.png" alt=""></p>
-<p>也是像LIKE的意思， 他可以筛选出相似的信息， 比如图片中的LIKE ‘Se_en’, 会筛选出Seven和Se7en</p>
-<p><strong>“_”</strong>可以替代一切内容，相似的还有<strong>“%”</strong>：</p>
-<p><img src="http://i4.tietuku.com/abda71975586aa61.png" alt=""></p>
-<p>LIKE 不管大小写！！！<strong>“not case sensitive”</strong></p>
-</blockquote>
-<p><strong>SELECT…FROM…WHERE…BETWEEN</strong></p>
-<blockquote>
-<p>BETWEEN 那就是信息内容在什么之间</p>
-<p>比如year 在两个数之间 名字 在‘a’ ‘k’字母之间</p>
-<p><img src="http://i8.tietuku.com/b23f67e6bb695943.png" alt=""></p>
-</blockquote>
-</blockquote>
-<p>##Combine multiple conditions!!!</p>
-<blockquote>
-<p>有时候你又要找到between某个年代的 又要找到某种类型的 </p>
-<p>这时候combine就需要and 这样子的逻辑运算符</p>
-<p><img src="http://i8.tietuku.com/528a08b5be8a1910.png" alt=""></p>
-<p>那么既然有了AND 肯定也有OR 用法相同</p>
-</blockquote>
-<p>##ORDER BY</p>
-<blockquote>
-<p>那么除了基本的筛选内容，我们还希望内容能够按某一个特定的我们想要的顺序输出</p>
-<p><strong>SELECT…FROM…ORDER BY…DESC/ASC</strong></p>
-<blockquote>
-<p><img src="http://i4.tietuku.com/ab83e1a7a051aa96.png" alt=""></p>
-<p>图片中已经解释了最让非程序员不能理解的部分 DESC/ASC</p>
-<p>前者是降序 descending order</p>
-<p>后者是升序 ascending order</p>
-</blockquote>
-<p><strong>SELECT…FROM…ORDER BY…LIMIT…</strong></p>
-<blockquote>
-<p>既然我们可以筛选特点的顺序 那么再缩小范围 特定数量的也可以，通过limit</p>
-<p><img src="http://i4.tietuku.com/715659f922c5166c.png" alt=""></p>
-</blockquote>
-</blockquote>
-<h2 id="23_23SUMMARY_of_how_to_query_data_from_database_using_SQL"><a href="#23_23SUMMARY_of_how_to_query_data_from_database_using_SQL" class="headerlink" title="##SUMMARY of how to query data from database using SQL"></a>##SUMMARY of how to query data from database using SQL</h2><p><img src="http://i4.tietuku.com/5086ebe9cf62e04a.png" alt=""></p>
-<h2 id="23_23How_to_perform_calculations_using_SQL"><a href="#23_23How_to_perform_calculations_using_SQL" class="headerlink" title="##How to perform calculations using SQL"></a>##How to perform calculations using SQL</h2><p>###Aggregate function!!!</p>
-<blockquote>
-<p><strong>SELECT COUNT…FROM…</strong></p>
-<blockquote>
-<p>计算非空行的数量</p>
-<p><img src="http://i8.tietuku.com/7bef36cae8add63f.png" alt=""></p>
-<p>在例子中， COUNT(<em>) </em>就是和之前一样代表整个database，当然也可以具体某一个的数量</p>
-</blockquote>
-</blockquote>
-<p>###SELECT COUNT 也可以配合where使用</p>
-<blockquote>
-<p>计算某一个项目的数量</p>
-</blockquote>
-<p>###除了配合where，一个新的时GROUP BY</p>
-<blockquote>
-<p>顾名思义 分组</p>
-<p><img src="http://i8.tietuku.com/a1d41ea55f0ed6db.png" alt=""></p>
-<p><img src="http://i4.tietuku.com/f81d6481015e96fb.png" alt=""></p>
-<p><strong>SELECT SUM(…)</strong></p>
-<blockquote>
-<p>容易理解 计算总和 用法和count相似</p>
-<p><img src="http://i4.tietuku.com/d6130a64b6860259.png" alt=""></p>
-</blockquote>
-</blockquote>
-<p>除了SUM 还有MAX, MIN, AVG(Average)等， 用法均与COUNT相同 ，可以配合SELECT 某一row进行</p>
-<p>##在针对AVG进行运算的时候很容易出现小数</p>
-<blockquote>
-<p>那么处理小数就出现了许多问题</p>
-<p>比如小数会出现不同的小数位， 总要统一一个标准，比如保留到二位小数之类的</p>
-<p><img src="http://i4.tietuku.com/69fe8aa5e8678ae9.png" alt=""></p>
-<p>出现的最后效果为：<br><img src="http://i4.tietuku.com/a092f2bac642ab69.png" alt=""></p>
-</blockquote>
-<p>如果round内什么都不加，就是默认到最近的integer<br><img src="http://i8.tietuku.com/42daa32bd3bacd68.png" alt=""></p>
-<h2 id="23_23SUMMARY_of_aggregate_function_21_21_21"><a href="#23_23SUMMARY_of_aggregate_function_21_21_21" class="headerlink" title="##SUMMARY of aggregate function!!!"></a>##SUMMARY of aggregate function!!!</h2><p><img src="http://i8.tietuku.com/2b18efee9f19cb67.png" alt=""></p>
-<h2 id="23_23PRIMARY_KEY"><a href="#23_23PRIMARY_KEY" class="headerlink" title="##PRIMARY KEY"></a>##PRIMARY KEY</h2><p>what is ?<br>what’s for?<br>connect 2 tables using it.<br><img src="http://i4.tietuku.com/094736a6a2320696.png" alt=""></p>
-<h2 id="23_23foreign_key"><a href="#23_23foreign_key" class="headerlink" title="##foreign key"></a>##foreign key</h2><p><img src="http://i4.tietuku.com/83d3934e3112b49c.png" alt=""></p>
-<h2 id="23_23cross_join"><a href="#23_23cross_join" class="headerlink" title="##cross join"></a>##cross join</h2><p><img src="http://i4.tietuku.com/282c02f0e5e6fbd7.png" alt=""></p>
-<p><strong>BUT</strong></p>
-<p>###如果按照图片中的指令写， 会出现错误的结果如图：<br><img src="http://i4.tietuku.com/7cd51057678fd762.png" alt=""></p>
-<h2 id="23_23JOIN_u2026ON_u2026"><a href="#23_23JOIN_u2026ON_u2026" class="headerlink" title="##JOIN…ON…"></a>##JOIN…ON…</h2><p>针对上面的错误，正确的写法如下：<br><img src="http://i4.tietuku.com/c7b48947d7a99826.png" alt=""><br><strong><em>WHY?</em></strong></p>
-<p><img src="http://i4.tietuku.com/3df1f811f907dcd2.png" alt=""></p>
-<p><strong>LEFT JOIN</strong><br><img src="http://i4.tietuku.com/0fbd417dd8375f52.png" alt=""></p>
-<h2 id="23_23AS"><a href="#23_23AS" class="headerlink" title="##AS"></a>##AS</h2><p><img src="http://i4.tietuku.com/e45619cdc27d9e90.png" alt=""></p>
-
-          
+          <p><blockquote class="blockquote-center"><br>ArrayList HashMap Set<br></blockquote><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/25/对象容器/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -726,8 +428,8 @@ public class Sportscar extends Car{
             
               
                 
-                <a class="post-title-link" href="/2016/01/25/hello-world/" itemprop="url">
-                  Hello World
+                <a class="post-title-link" href="/2016/01/25/HTML&CSS/" itemprop="url">
+                  HTML&CSS 静态网页制作
                 </a>
               
             
@@ -740,11 +442,30 @@ public class Sportscar extends Car{
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-01-25T16:41:28+08:00" content="Jan 25 2016">
+            <time itemprop="dateCreated" datetime="2016-01-25T21:50:16+08:00" content="Jan 25 2016">
               Jan 25 2016
             </time>
           </span>
 
+          
+            <span class="post-category" >
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/blog/" itemprop="url" rel="index">
+                    <span itemprop="name">blog</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
           
 
           
@@ -767,18 +488,12 @@ public class Sportscar extends Car{
 
       
         
-          
-            <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start"><a href="#Quick_Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create_a_new_post"><a href="#Create_a_new_post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server"><a href="#Run_server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files"><a href="#Generate_static_files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites"><a href="#Deploy_to_remote_sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p><blockquote class="blockquote-center"><br>How to make a website?<br></blockquote><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/01/25/HTML&CSS/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -857,7 +572,7 @@ public class Sportscar extends Car{
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">2</span>
+              <span class="site-state-item-count">3</span>
               <span class="site-state-item-name">标签</span>
               </a>
           </div>
