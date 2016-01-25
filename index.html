@@ -65,6 +65,66 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-Java1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/Java1/" class="article-date">
+  <time datetime="2016-01-25T10:32:49.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="23Java_u7B2C_u4E00_u7BC7"><a href="#23Java_u7B2C_u4E00_u7BC7" class="headerlink" title="#Java第一篇"></a>#Java第一篇</h2><p>1.java程序中class name 习惯于 首字母大写<br><img src="http://i11.tietuku.com/2d3c258ce73a9462.png" alt=""><br>2.当在java程序里面写System之类的指令时， 可以直接使用option（Alt）+ / enable intelligent code!<br><br>3.Java 中两个字符串之间用“+”加号链接, 数字可以直接 + int,可以不需要双引号<br><img src="http://i4.tietuku.com/e48a7823660f206a.png" alt=""><br>4.”Ctrl+/“ 可以在一行的开头加上”//“ 作为注释<br><br>5.如何在java里面进行计算：要print出2+3的值 需要“2+3=”+（2+3）<br>但是 如果2+3放在前面就可以直接写， 不需要括号<br><img src="http://i4.tietuku.com/138d257ea4b50562.png" alt=""><br>6.一个类似于找钱的减法程序， 我们知道了在Java中也可以像C语言一样定义，而且定义类型的方式相同(也具有保留字，不能以数字开头等规定)；<br>定义完之后要告诉这个变量定义的变量的值或者要读取什么， 比如<strong>in.nextint()</strong>;</p>
+<pre><code>package hello;
+
+import java.util.Scanner;
+
+public class Hello {
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+        System.out.println(&quot;这是一个减法程序！\n&quot;);
+        Scanner in = new Scanner(System.in);
+        int paoge;
+        paoge = in.nextInt();
+        System.out.println(&quot;100-&quot;+paoge+&quot;=&quot;+(100-paoge));
+    }
+
+}
+</code></pre><p>这样就能完成我们的找钱程序了！<br><br>7.在Java中定义一个<strong>常量</strong>， 用法在定义类型前加上 <strong>“final”</strong><br><img src="http://i11.tietuku.com/c0a4cc6a8facbfa9.png" alt=""><br>8.System.out.print(“”)这时候输出的东西不加回车了<br><br>9.在JAVA中已经有了Boolean数据类型，这就意味着不能再像C语言那样while(1)进入一个循环，因为1是一个integer，和boolean不同。</p>
+<p>正确方法是定义boolean ishot = true;</p>
+<p>while (ishot){</p>
+<p>}</p>
+<blockquote>
+<p>我们一般将具有相同属性和行为的一组对象称为类，类是一个独立的单位，它有一个类名，其内部包含成员变量和成员方法。类是抽象的，而对象就是类的实例化</p>
+<p>面向对象是现实世界的延伸，我们可以将生活中的任何物体都看作是对象，对象之间能通过消息相互作用。面向对象有三个重要概念：封装、多态和继承。</p>
+<p>封装就是将类的数据和方法结合成一个整体，隐藏对象的属性和实现细节，只对外公开接口。这样可以让软件设计人员集中精力考虑开发系统各模块之间的关系等主要问题，充分的保证了模块的质量和可靠性。</p>
+<p>继承是由一个基本类上得到一个特殊类的方式。如果类B继承了类A，那么类B的对象就能够具有类A所定义的属性和方法。这时我们将类A称为父类，类B称为子类。是不是很形象呢？</p>
+<p>多态是允许程序中出现重名的现象，Java中的多态有两种体现方式，分别是方法重载和成员覆写。方法重载是说在一个类中，允许多个方法使用相同的名字，但方法的参数不同。成员覆写则表示子类与父类允许有相同的变量名称或方法名称。 </p>
+</blockquote>
+<p>##继承 inheritance<br><img src="http://i8.tietuku.com/e00dfe76db369f9c.png" alt=""><br><img src="http://i8.tietuku.com/3790968490653b1e.png" alt=""></p>
+<p>##简单整理一些oo名词<br><img src="http://i8.tietuku.com/96bf429c1f695cbd.png" alt=""></p>
+<p>##ArrayList（Built-in data structure）<br><img src="http://i8.tietuku.com/aeed7b2936b87cbc.png" alt=""><br><strong>在array中加入元素：</strong><br><img src="http://i8.tietuku.com/df6a476f4722ffbb.png" alt=""><br><strong>在已创建完的array中加入元素</strong><br><img src="http://i8.tietuku.com/39aa77e46c38647c.png" alt=""><br><strong>index</strong><br><img src="http://i8.tietuku.com/b810a6f28b34e019.png" alt=""><br><strong>遍历ArrayList中的每一个元素</strong></p>
+<p>for循环， 截止条件是size();<br><img src="http://i8.tietuku.com/39fe66ff07ba1ec3.png" alt=""><br><strong>concise format of for</strong><br><img src="http://i4.tietuku.com/1474de557b63e438.png" alt=""><br><code>for (数据类型名 变量名 : 数组名)
+就可以完美遍历ArrayList中的所以元素</code></p>
+<p>##HashMap哈希表Built-in data structure）<br><img src="http://i4.tietuku.com/86a9135da0fa75d5.png" alt=""><br><strong>fill HashMap with useful data</strong><br><img src="http://i4.tietuku.com/48d376474bc310f0.png" alt=""><br><strong>access a value in HashMap</strong><br><img src="http://i4.tietuku.com/e0d542f80feab26c.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/Java1/" data-id="cijtu79k400008m9klz07do86" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-SQL from codecademy" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/01/25/SQL from codecademy/" class="article-date">
@@ -261,7 +321,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/25/SQL from codecademy/" data-id="cijtsza1800006s9k91ka8x0d" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/25/SQL from codecademy/" data-id="cijtu79kl00028m9kh7drmxcp" class="article-share-link">Share</a>
       
       
     </footer>
@@ -306,7 +366,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/25/hello-world/" data-id="cijtsza1g00016s9kr1xo95oz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/25/hello-world/" data-id="cijtu79kj00018m9ksyeq0mg0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -331,7 +391,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -341,6 +401,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/01/25/Java1/">(no title)</a>
+          </li>
         
           <li>
             <a href="/2016/01/25/SQL from codecademy/">SQL笔记</a>
