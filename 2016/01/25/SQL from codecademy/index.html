@@ -1,20 +1,394 @@
-extends partial/layout
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>SQL笔记 | Chendingyan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="#SQL Language learning##what is SQL?
 
-block site_title
-    != page.title + " · " + config.title
+SQL, ‘Structured Query Language’, is a programming language designed to manage data stored in relational databases. SQL operates through simple, declarative state">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SQL笔记">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/SQL from codecademy/index.html">
+<meta property="og:site_name" content="Chendingyan's Blog">
+<meta property="og:description" content="#SQL Language learning##what is SQL?
 
-block description
-    - desc = page.desc || page.title + ' - ' + config.author;
-    meta(name="description", content=desc)
+SQL, ‘Structured Query Language’, is a programming language designed to manage data stored in relational databases. SQL operates through simple, declarative state">
+<meta property="og:image" content="http://i8.tietuku.com/f28b1f8fdbd5818c.png">
+<meta property="og:image" content="http://i4.tietuku.com/71b1ae29ccba7c52.png">
+<meta property="og:image" content="http://i4.tietuku.com/bbce3ddd255aa0fe.png">
+<meta property="og:image" content="http://i4.tietuku.com/2407c78c7dd4fa11.png">
+<meta property="og:image" content="http://i4.tietuku.com/e658d2547a676df1.png">
+<meta property="og:image" content="http://i4.tietuku.com/8000f7109514c36a.png">
+<meta property="og:image" content="http://i8.tietuku.com/a2029ba0b268a212.png">
+<meta property="og:image" content="http://i8.tietuku.com/b12af051421f5938.png">
+<meta property="og:image" content="http://i8.tietuku.com/80545d442ca5f9fa.png">
+<meta property="og:image" content="http://i8.tietuku.com/dbb2ea1274da008f.png">
+<meta property="og:image" content="http://i4.tietuku.com/d505cc79c5ed5047.png">
+<meta property="og:image" content="http://i4.tietuku.com/5a93fd8f2f824b0c.png">
+<meta property="og:image" content="http://i4.tietuku.com/abda71975586aa61.png">
+<meta property="og:image" content="http://i8.tietuku.com/b23f67e6bb695943.png">
+<meta property="og:image" content="http://i8.tietuku.com/528a08b5be8a1910.png">
+<meta property="og:image" content="http://i4.tietuku.com/ab83e1a7a051aa96.png">
+<meta property="og:image" content="http://i4.tietuku.com/715659f922c5166c.png">
+<meta property="og:image" content="http://i4.tietuku.com/5086ebe9cf62e04a.png">
+<meta property="og:image" content="http://i8.tietuku.com/7bef36cae8add63f.png">
+<meta property="og:image" content="http://i8.tietuku.com/a1d41ea55f0ed6db.png">
+<meta property="og:image" content="http://i4.tietuku.com/f81d6481015e96fb.png">
+<meta property="og:image" content="http://i4.tietuku.com/d6130a64b6860259.png">
+<meta property="og:image" content="http://i4.tietuku.com/69fe8aa5e8678ae9.png">
+<meta property="og:image" content="http://i4.tietuku.com/a092f2bac642ab69.png">
+<meta property="og:image" content="http://i8.tietuku.com/42daa32bd3bacd68.png">
+<meta property="og:image" content="http://i8.tietuku.com/2b18efee9f19cb67.png">
+<meta property="og:image" content="http://i4.tietuku.com/094736a6a2320696.png">
+<meta property="og:image" content="http://i4.tietuku.com/83d3934e3112b49c.png">
+<meta property="og:image" content="http://i4.tietuku.com/282c02f0e5e6fbd7.png">
+<meta property="og:image" content="http://i4.tietuku.com/7cd51057678fd762.png">
+<meta property="og:image" content="http://i4.tietuku.com/c7b48947d7a99826.png">
+<meta property="og:image" content="http://i4.tietuku.com/3df1f811f907dcd2.png">
+<meta property="og:image" content="http://i4.tietuku.com/0fbd417dd8375f52.png">
+<meta property="og:image" content="http://i4.tietuku.com/e45619cdc27d9e90.png">
+<meta property="og:updated_time" content="2016-01-25T09:08:24.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="SQL笔记">
+<meta name="twitter:description" content="#SQL Language learning##what is SQL?
 
-block container
-    include mixins/post
-    +post(page)
+SQL, ‘Structured Query Language’, is a programming language designed to manage data stored in relational databases. SQL operates through simple, declarative state">
+  
+    <link rel="alternative" href="/atom.xml" title="Chendingyan&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
 
-block pagination
-    include mixins/paginator
-    +post()
-    include partial/comment
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Chendingyan&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Mike</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-SQL from codecademy" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/SQL from codecademy/" class="article-date">
+  <time datetime="2016-01-25T09:08:24.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      SQL笔记
+    </h1>
+  
 
-block copyright
-    include partial/copyright
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="23SQL_Language_learning"><a href="#23SQL_Language_learning" class="headerlink" title="#SQL Language learning"></a>#SQL Language learning</h2><p>##what is SQL?</p>
+<blockquote>
+<p>SQL, ‘Structured Query Language’, is a programming language designed to manage data stored in relational databases. SQL operates through simple, declarative statements. This keeps data accurate and secure, and helps maintain the integrity of databases, regardless of size.</p>
+<p>The SQL language is widely used today across web frameworks and database applications. Knowing SQL gives you the freedom to explore your data, and the power to make better decisions. By learning SQL, you will also learn concepts that apply to nearly every data storage system.</p>
+</blockquote>
+<p>##relational database?</p>
+<blockquote>
+<p>A relational database is a database that organizes information into one or more tables. Here the relational database contains one table.</p>
+</blockquote>
+<p>##table?</p>
+<blockquote>
+<p>A table is a collection of data organized into rows and columns. Tables are sometimes referred to as relations. </p>
+</blockquote>
+<p>##row and coloum?</p>
+<blockquote>
+<p>A column is a set of data values of a particular type. Here id, name, and age are each columns. </p>
+<p>A row is a single record in a table. The first row in the celebs table has:</p>
+<p>An id of 1<br><br>A name of Justin Bieber<br><br>An age of 22</p>
+</blockquote>
+<p>##data type in SQL</p>
+<blockquote>
+<p>All data stored in a relational database is of a certain data type. Some of the most common data types are:</p>
+<ol>
+<li>Integer, a positive or negative whole number </li>
+<li>Text, a text string </li>
+<li>Date, the date formatted as YYYY-MM-DD for the year, month, and day </li>
+<li>Real, a decimal value </li>
+</ol>
+</blockquote>
+<p>##SQL Statement</p>
+<blockquote>
+<p>A statement is text that the database recognizes as a valid command. </p>
+<p>Statements always end in a semi-colon <strong>;</strong></p>
+<p><strong>CREATE TABLE</strong></p>
+<blockquote>
+<p>CREATE TABLE is a clause. Clauses perform specific tasks in SQL. By convention, clauses are written in capital letters. Clauses can also be referred to as commands.</p>
+<p>table_name refers to the name of the table that the command is applied to.</p>
+<p>(column_1 data_type, column_2 data_type, column_3 data_type) is a parameter. A parameter is a list of columns, data types, or values that are passed to a clause as an argument. Here, the parameter is a list of column names and the associated data type.<br><img src="http://i8.tietuku.com/f28b1f8fdbd5818c.png" alt=""></p>
+</blockquote>
+<p><strong>INSERT INTO</strong></p>
+<blockquote>
+<p>之前已经创建完table了 之后需要insert信息into table</p>
+<p><img src="http://i4.tietuku.com/71b1ae29ccba7c52.png" alt=""></p>
+</blockquote>
+<p><strong>SELECT * FROM</strong></p>
+<blockquote>
+<p>查看你所创建的表中的内容</p>
+<p><img src="http://i4.tietuku.com/bbce3ddd255aa0fe.png" alt=""></p>
+<p><img src="http://i4.tietuku.com/2407c78c7dd4fa11.png" alt=""></p>
+<p>如果是写 SELECT * FROM XXX则查看的是所有内容， 当然也可以只查看某一item的内容，e.g.SELECT name FROM…</p>
+<p><img src="http://i4.tietuku.com/e658d2547a676df1.png" alt=""></p>
+</blockquote>
+<p><strong>UPDATE…SET…WHERE…</strong></p>
+<blockquote>
+<p>UPDATE可以帮助更改table中的信息</p>
+<p><img src="http://i4.tietuku.com/8000f7109514c36a.png" alt=""></p>
+</blockquote>
+<p><strong>ALTER TABLE</strong></p>
+<blockquote>
+<p>ALTER TABLE 指令可以帮助你增加row</p>
+<p><img src="http://i8.tietuku.com/a2029ba0b268a212.png" alt=""></p>
+</blockquote>
+<p><strong>DELETE FROM…WHERE…IS…</strong></p>
+<blockquote>
+<p><img src="http://i8.tietuku.com/b12af051421f5938.png" alt=""></p>
+<p><img src="http://i8.tietuku.com/80545d442ca5f9fa.png" alt=""></p>
+</blockquote>
+</blockquote>
+<p>##SUMMARY<br>Congratulations! You’ve learned <strong>six commands</strong> commonly used to manage data stored in a relational database. What can we generalize so far?</p>
+<p>SQL is a programming language designed to manipulate and manage data stored in relational databases.</p>
+<p>A relational database is a database that organizes information into one or more tables.<br>A table is a collection of data organized into rows and columns.<br>A statement is a string of characters that the database recognizes as a valid command.</p>
+<p>CREATE TABLE creates a new table.</p>
+<p>INSERT INTO adds a new row to a table.</p>
+<p>SELECT queries data from a table.</p>
+<p>UPDATE edits a row in a table.</p>
+<p>ALTER TABLE changes an existing table.</p>
+<p>DELETE FROM deletes rows from a table.</p>
+<h2 id="23_23QUERIES"><a href="#23_23QUERIES" class="headerlink" title="##QUERIES"></a>##QUERIES</h2><blockquote>
+<p><strong>SELECT DISTINCT FROM</strong></p>
+<blockquote>
+<p>可以筛选过滤 让每一种类型只出现一次</p>
+<p><img src="http://i8.tietuku.com/dbb2ea1274da008f.png" alt=""></p>
+</blockquote>
+<p><strong>SELECT…FROM…WHERE…</strong></p>
+<blockquote>
+<p>就像文字所说，选出某些特定要求的row， where 一般后面跟判断语句， 比如id == 18;<br><br><br>这样就是一直query 筛选</p>
+</blockquote>
+<p><strong>SELECT…FROM…WHERE…LIKE</strong>是一种特殊的跟在SELECT 后的operator<br>&gt;</p>
+<blockquote>
+<p><img src="http://i4.tietuku.com/d505cc79c5ed5047.png" alt=""></p>
+<p><img src="http://i4.tietuku.com/5a93fd8f2f824b0c.png" alt=""></p>
+<p>也是像LIKE的意思， 他可以筛选出相似的信息， 比如图片中的LIKE ‘Se_en’, 会筛选出Seven和Se7en</p>
+<p><strong>“_”</strong>可以替代一切内容，相似的还有<strong>“%”</strong>：</p>
+<p><img src="http://i4.tietuku.com/abda71975586aa61.png" alt=""></p>
+<p>LIKE 不管大小写！！！<strong>“not case sensitive”</strong></p>
+</blockquote>
+<p><strong>SELECT…FROM…WHERE…BETWEEN</strong></p>
+<blockquote>
+<p>BETWEEN 那就是信息内容在什么之间</p>
+<p>比如year 在两个数之间 名字 在‘a’ ‘k’字母之间</p>
+<p><img src="http://i8.tietuku.com/b23f67e6bb695943.png" alt=""></p>
+</blockquote>
+</blockquote>
+<p>##Combine multiple conditions!!!</p>
+<blockquote>
+<p>有时候你又要找到between某个年代的 又要找到某种类型的 </p>
+<p>这时候combine就需要and 这样子的逻辑运算符</p>
+<p><img src="http://i8.tietuku.com/528a08b5be8a1910.png" alt=""></p>
+<p>那么既然有了AND 肯定也有OR 用法相同</p>
+</blockquote>
+<p>##ORDER BY</p>
+<blockquote>
+<p>那么除了基本的筛选内容，我们还希望内容能够按某一个特定的我们想要的顺序输出</p>
+<p><strong>SELECT…FROM…ORDER BY…DESC/ASC</strong></p>
+<blockquote>
+<p><img src="http://i4.tietuku.com/ab83e1a7a051aa96.png" alt=""></p>
+<p>图片中已经解释了最让非程序员不能理解的部分 DESC/ASC</p>
+<p>前者是降序 descending order</p>
+<p>后者是升序 ascending order</p>
+</blockquote>
+<p><strong>SELECT…FROM…ORDER BY…LIMIT…</strong></p>
+<blockquote>
+<p>既然我们可以筛选特点的顺序 那么再缩小范围 特定数量的也可以，通过limit</p>
+<p><img src="http://i4.tietuku.com/715659f922c5166c.png" alt=""></p>
+</blockquote>
+</blockquote>
+<h2 id="23_23SUMMARY_of_how_to_query_data_from_database_using_SQL"><a href="#23_23SUMMARY_of_how_to_query_data_from_database_using_SQL" class="headerlink" title="##SUMMARY of how to query data from database using SQL"></a>##SUMMARY of how to query data from database using SQL</h2><p><img src="http://i4.tietuku.com/5086ebe9cf62e04a.png" alt=""></p>
+<h2 id="23_23How_to_perform_calculations_using_SQL"><a href="#23_23How_to_perform_calculations_using_SQL" class="headerlink" title="##How to perform calculations using SQL"></a>##How to perform calculations using SQL</h2><p>###Aggregate function!!!</p>
+<blockquote>
+<p><strong>SELECT COUNT…FROM…</strong></p>
+<blockquote>
+<p>计算非空行的数量</p>
+<p><img src="http://i8.tietuku.com/7bef36cae8add63f.png" alt=""></p>
+<p>在例子中， COUNT(<em>) </em>就是和之前一样代表整个database，当然也可以具体某一个的数量</p>
+</blockquote>
+</blockquote>
+<p>###SELECT COUNT 也可以配合where使用</p>
+<blockquote>
+<p>计算某一个项目的数量</p>
+</blockquote>
+<p>###除了配合where，一个新的时GROUP BY</p>
+<blockquote>
+<p>顾名思义 分组</p>
+<p><img src="http://i8.tietuku.com/a1d41ea55f0ed6db.png" alt=""></p>
+<p><img src="http://i4.tietuku.com/f81d6481015e96fb.png" alt=""></p>
+<p><strong>SELECT SUM(…)</strong></p>
+<blockquote>
+<p>容易理解 计算总和 用法和count相似</p>
+<p><img src="http://i4.tietuku.com/d6130a64b6860259.png" alt=""></p>
+</blockquote>
+</blockquote>
+<p>除了SUM 还有MAX, MIN, AVG(Average)等， 用法均与COUNT相同 ，可以配合SELECT 某一row进行</p>
+<p>##在针对AVG进行运算的时候很容易出现小数</p>
+<blockquote>
+<p>那么处理小数就出现了许多问题</p>
+<p>比如小数会出现不同的小数位， 总要统一一个标准，比如保留到二位小数之类的</p>
+<p><img src="http://i4.tietuku.com/69fe8aa5e8678ae9.png" alt=""></p>
+<p>出现的最后效果为：<br><img src="http://i4.tietuku.com/a092f2bac642ab69.png" alt=""></p>
+</blockquote>
+<p>如果round内什么都不加，就是默认到最近的integer<br><img src="http://i8.tietuku.com/42daa32bd3bacd68.png" alt=""></p>
+<h2 id="23_23SUMMARY_of_aggregate_function_21_21_21"><a href="#23_23SUMMARY_of_aggregate_function_21_21_21" class="headerlink" title="##SUMMARY of aggregate function!!!"></a>##SUMMARY of aggregate function!!!</h2><p><img src="http://i8.tietuku.com/2b18efee9f19cb67.png" alt=""></p>
+<h2 id="23_23PRIMARY_KEY"><a href="#23_23PRIMARY_KEY" class="headerlink" title="##PRIMARY KEY"></a>##PRIMARY KEY</h2><p>what is ?<br>what’s for?<br>connect 2 tables using it.<br><img src="http://i4.tietuku.com/094736a6a2320696.png" alt=""></p>
+<h2 id="23_23foreign_key"><a href="#23_23foreign_key" class="headerlink" title="##foreign key"></a>##foreign key</h2><p><img src="http://i4.tietuku.com/83d3934e3112b49c.png" alt=""></p>
+<h2 id="23_23cross_join"><a href="#23_23cross_join" class="headerlink" title="##cross join"></a>##cross join</h2><p><img src="http://i4.tietuku.com/282c02f0e5e6fbd7.png" alt=""></p>
+<p><strong>BUT</strong></p>
+<p>###如果按照图片中的指令写， 会出现错误的结果如图：<br><img src="http://i4.tietuku.com/7cd51057678fd762.png" alt=""></p>
+<h2 id="23_23JOIN_u2026ON_u2026"><a href="#23_23JOIN_u2026ON_u2026" class="headerlink" title="##JOIN…ON…"></a>##JOIN…ON…</h2><p>针对上面的错误，正确的写法如下：<br><img src="http://i4.tietuku.com/c7b48947d7a99826.png" alt=""><br><strong><em>WHY?</em></strong></p>
+<p><img src="http://i4.tietuku.com/3df1f811f907dcd2.png" alt=""></p>
+<p><strong>LEFT JOIN</strong><br><img src="http://i4.tietuku.com/0fbd417dd8375f52.png" alt=""></p>
+<h2 id="23_23AS"><a href="#23_23AS" class="headerlink" title="##AS"></a>##AS</h2><p><img src="http://i4.tietuku.com/e45619cdc27d9e90.png" alt=""></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/SQL from codecademy/" data-id="cijtsza1800006s9k91ka8x0d" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/01/25/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Hello World</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">2</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/01/25/SQL from codecademy/">SQL笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/hello-world/">Hello World</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Mike Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>
