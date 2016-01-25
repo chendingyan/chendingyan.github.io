@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Java学习 类和对象 | Chendingyan&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="用类制造对象
+##建立对象
+@(Java预习)
+格式：
+// Take the &amp;quot;shapes.zip&amp;quot; as example:
+// &amp;lt;CLASS&amp;gt; &amp;lt;OBJECT&amp;gt; = new &amp;lt;CLASS&amp;gt;(...);
+
+Rectangle r = new Rectangle(1, 1, 100, 100);
+Circle c = new Circle">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习 类和对象">
+<meta property="og:url" content="http://yoursite.com/2016/01/25/类的存放问题/index.html">
+<meta property="og:site_name" content="Chendingyan's Blog">
+<meta property="og:description" content="用类制造对象
+##建立对象
+@(Java预习)
+格式：
+// Take the &amp;quot;shapes.zip&amp;quot; as example:
+// &amp;lt;CLASS&amp;gt; &amp;lt;OBJECT&amp;gt; = new &amp;lt;CLASS&amp;gt;(...);
+
+Rectangle r = new Rectangle(1, 1, 100, 100);
+Circle c = new Circle">
+<meta property="og:image" content="http://i4.tietuku.com/d7888cfaee12c027.png">
+<meta property="og:image" content="http://i4.tietuku.com/c294d5aa2a388462.png">
+<meta property="og:image" content="http://i4.tietuku.com/f8f85f6ee96f391f.png">
+<meta property="og:image" content="http://i8.tietuku.com/7bbd247630a8da05.png">
+<meta property="og:image" content="http://i8.tietuku.com/f5ea447e03e2d2bd.png">
+<meta property="og:updated_time" content="2016-01-25T10:40:36.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java学习 类和对象">
+<meta name="twitter:description" content="用类制造对象
+##建立对象
+@(Java预习)
+格式：
+// Take the &amp;quot;shapes.zip&amp;quot; as example:
+// &amp;lt;CLASS&amp;gt; &amp;lt;OBJECT&amp;gt; = new &amp;lt;CLASS&amp;gt;(...);
+
+Rectangle r = new Rectangle(1, 1, 100, 100);
+Circle c = new Circle">
+  
+    <link rel="alternative" href="/atom.xml" title="Chendingyan&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/css/style.css" type="text/css">
+  
+
+</head>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Chendingyan&#39;s Blog</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Mike</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-类的存放问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/类的存放问题/" class="article-date">
+  <time datetime="2016-01-25T10:40:36.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Java学习 类和对象
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用类制造对象</p>
+<p>##建立对象</p>
+<p>@(Java预习)</p>
+<p>格式：</p>
+<pre><code>// Take the &quot;shapes.zip&quot; as example:
+// &lt;CLASS&gt; &lt;OBJECT&gt; = new &lt;CLASS&gt;(...);
+
+Rectangle r = new Rectangle(1, 1, 100, 100);
+Circle c = new Circle(1, 1, 50)
+</code></pre><p>笔记：</p>
+<p>类和对象的关系：</p>
+<p>类定义了对象长什么样，对象则是按照类的定义所制造出来的实体，一个类可以创建很多对象，每个对象有自己的数据</p>
+<p><strong>封装</strong>：将数据和对数据的操作放在一起</p>
+<p>##定义类</p>
+<p>格式：</p>
+<pre><code>// &lt;CLASS&gt; &lt;OBJECT&gt; = new &lt;CLASS&gt;();
+public class Test {
+    ...
+    // It can declare member variables &amp; member functions here.
+    }
+    public static void main(String[] args) {
+        Test t1 = new Test();
+        Test t2 = new Test();
+        // t1 is different from t2.
+    }
+}
+</code></pre><p>笔记：</p>
+<p>对象变量是对象的管理者，而非所有者（如同数组变量、字符串）</p>
+<p>我们可以使用 . 点操作符来让对象做些事情</p>
+<p>class 具有成员变量 &amp; 成员函数</p>
+<p>##成员变量和成员函数</p>
+<p>笔记：</p>
+<p>写在类里的成员变量，只是一个声明，变量并不在那里，变量不在类里，变量在每一个对象里</p>
+<p>类定义了对象中所具有的变量，即成员变量</p>
+<p>成员函数可以直接访问成员变量</p>
+<p>成员函数可以通过点操作符 . 来被其对象调用</p>
+<p>在同一个类中，成员函数可以直接调用其它成员函数，而不需要使用 . 操作符（this 是可选择的）</p>
+<p>this 是成员函数的一个特殊的固有的本地变量，它表达了调用这个函数的那个对象</p>
+<p>###本地变量：</p>
+<p>定义在函数的变量（在外部为成员变量）</p>
+<p>其生存期和作用域都是函数内部</p>
+<p>###成员变量：<br>其生存期是对象的生存期</p>
+<p>生存期起始于 new 对象时，不需要关心什么时候消失（Java 具有自动垃圾回收机制）</p>
+<p>其作用域是类内部的成员函数<br><img src="http://i4.tietuku.com/d7888cfaee12c027.png" alt=""></p>
+<p>##对象初始化</p>
+<p>笔记：</p>
+<p>Java 有许多方法来初始化对象：</p>
+<blockquote>
+<p>默认 0 值：</p>
+<p>int – 0</p>
+<p>float – 0.0</p>
+<p>boolean – false</p>
+<p>Object – null</p>
+</blockquote>
+<p>###直接赋值；<br>使用成员函数</p>
+<p>使用已经初始化的变量</p>
+<p>构造函数（可以使用 debug 的断点功能查看详细顺序）</p>
+<blockquote>
+<p>构造函数是一种特殊的和类名相同的函数！<br><img src="http://i4.tietuku.com/c294d5aa2a388462.png" alt=""><br><img src="http://i4.tietuku.com/f8f85f6ee96f391f.png" alt=""></p>
+</blockquote>
+<p>这个this.price = price 是一种Java语法，可以在一个构造函数中调用另一个同类的构造函数</p>
+<p>当使用这种方法的时候，只能出现在构造函数的第一行</p>
+<p>###函数重载：(overload)<br>一个类可能有多个构造函数，只要其参数表不同</p>
+<p>创建对象的时候给出不同的参数值，就会自动调用不同的构造函数<br>通过 this() 还可以调用其它构造函数</p>
+<p>一个类里的同名但参数表不同的函数构成了重载关系</p>
+<p>###重载容易发生误解和错误的两个地方——返回类型和形参名<br>    for example :<br>    两个方法签名一样的方法<br>    public long buyThings(int amount, int price);<br>    public int buyThings(int amount, int price);<br>    方法签名都是(int, int)是一样的<br>    但是由于返回类型不一样，Java它不知道执行哪一个 所以是错误的</p>
+<pre><code>for example :
+两个形参名“貌似”不一样的方法
+public int buyThings(int amount, int price);
+public int buyThings(int price, int amount);
+其实两个方法签名都是buyThings(int,int);
+也是错误的，一些初级面试题中可能有这种题目！
+
+Summary：
+方法的签名与方法的返回值无关；
+方法的签名与方法的形参姓名无关；
+</code></pre><p>###重载中的最难点——参数匹配原则<br>    for example:<br>    有一对方法 raiseSpeed（int speed）;<br>    raiseSpeed(double speed);<br>    你传入了raiseSpeed(70);<br>    那么这时候他会执行哪一个方法呢？</p>
+<pre><code>他会执行低精度的，which is raiseSpeed (int)的方法；
+因为！ 赋值规则就是低精度的可以赋值给高精度或者同精度的变量
+而高精度的却不能赋值给低精度的！
+</code></pre><p>##访问属性<br><img src="http://i8.tietuku.com/7bbd247630a8da05.png" alt=""></p>
+<p>##包 package<br><img src="http://i8.tietuku.com/f5ea447e03e2d2bd.png" alt=""></p>
+<p>##static 类变量<br>属于被类所属的变量</p>
+<p>类变量和类函数</p>
+<p>类是描述，对象是实体。在类里所描述的成员变量，是位于这个类的每一个对象中的</p>
+<p>而如果某个成员有 static 关键字做修饰，它就不再属于每一个对象，而是属于整个类的了</p>
+<p>通过每个对象都可以访问到这些类变量和类函数（<object name="">.<variable>），但是也可以通过类的名字来访问它们（<class name="">.<variable>）</variable></class></variable></object></p>
+<p>类函数由于不属于任何对象，因此也没有办法建立与调用它们的对象的关系，就不能访问任何非 static 的成员变量和成员函数了</p>
+<h2 id="23_23_u4ECE_u53E6_u4E00_u672C_u4E66_u91CC_u6574_u7406_u51FA_u6765_u7684_u6CE8_u610F_u70B9"><a href="#23_23_u4ECE_u53E6_u4E00_u672C_u4E66_u91CC_u6574_u7406_u51FA_u6765_u7684_u6CE8_u610F_u70B9" class="headerlink" title="##从另一本书里整理出来的注意点"></a>##从另一本书里整理出来的注意点</h2><h3 id="u7C7B_u7684_u5B58_u653E_u95EE_u9898"><a href="#u7C7B_u7684_u5B58_u653E_u95EE_u9898" class="headerlink" title="类的存放问题"></a>类的存放问题</h3><ol>
+<li>Java语言的源代码是以类为单位存放在文件中的，也就是说 一个类的内容不能出现在两个文件里；</li>
+<li>在一个源文件里，必须有且只能有一个public的类；一个源文件（<em>*</em>.java）内的内容是“一个public类”+”0个或者多个不是public的类”；<br>###类名</li>
+<li>类命名的习惯是首字母大写的一个或者多个单词；<br>###类的主体<br>1.类的主体的变量有两个名字，一个叫做类的“属性”（property），一个叫做类的成员变量（Member Variable）；<br>2.类中可以什么都没有，但它也是一个合法的类；<br>###理解引用 reference</li>
+<li>之前一直把类的名字称为类的变量，其实它叫做引用 reference；</li>
+<li>C语言中我们有指针，比如用于交换两个int变量可以用swap();函数，但是这一点在Java中是不可以的，Java只能引用类<br>###局部变量（local variable）与实例变量（instance variable）<br>局部变量是定义在<strong>方法</strong>里面的变量;</li>
+</ol>
+<p>实例变量就是普通的定义在类里面的变量；</p>
+<p>局部变量只能在该方法中使用，而且java不会给他自动赋值；相反实例变量可以在这个类的所有方法中使用而且会有默认的初始值，如int为0，boolean为false等</p>
+<p>所以在使用局部变量之前，必须给他赋值！局部变量之前不能加访问控制符，否则会报错；</p>
+<p>实例变量可以有访问控制符（public， private）在前面 +数据类型 +变量名；</p>
+<p>！！：万一局部变量和实例变量重名的话程序是不会报错的，而是会先局部变量，再实例变量的顺序查找；</p>
+<pre><code>public class SimpleclasstoshowThis{
+    public int a;
+    public void test(){
+        int a;
+        a = 55;
+        System.out.println(a);
+    }
+}
+</code></pre><p>改程序会输出55！</p>
+<p>###This关键字<br>从上面那个例子中，我们发现编译不会报错很好，但是改程序的实例变量 public int a 难道就不能访问了嘛。。。<br>如果要访问，则需要this 关键字了</p>
+<p>this关键字是在方法中使用，是指向对象自己的引用。 Java平台在遇到this关键字的时候，就会去使用他这个方法的调用者</p>
+<p>###构造函数/构造方法（constructor）</p>
+<ol>
+<li>构造函数没有返回值，但是构造函数内可以使用return</li>
+<li>构造函数名必须和类名一样</li>
+<li>只有同时具备以上两个条件，一个方法才是构造方法</li>
+<li>Java语言规定，一个类可以由很多的构造函数，但是至少要有一个构造函数</li>
+<li>在一个类中没有任何构造函数时，他会给这个类一个默认的、什么都不做的构造函数（注意一定要在那个类中没有构造方法时候才添加）</li>
+<li>一个类中可以有多个构造函数，他们之间是重载的关系，必须使用参数加以区分</li>
+<li>构造函数一般是完成一些初始化的工作</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/类的存放问题/" data-id="cijtuitxx0001a39kzm4r1mbo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/01/25/对象容器/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Java学习 对象容器
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/01/25/java2/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Java学习 第二篇</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  
+    
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">8</span></li></ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recents</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/01/25/HTML&CSS/">HTML&amp;CSS 静态网页制作</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/继承/">Java学习 继承</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/对象容器/">Java学习 对象容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/类的存放问题/">Java学习 类和对象</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/java2/">Java学习 第二篇</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 Mike Chen<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+  <script src="/fancybox/jquery.fancybox.pack.js" type="text/javascript"></script>
+
+
+<script src="/js/script.js" type="text/javascript"></script>
+
+  </div>
+</body>
+</html>

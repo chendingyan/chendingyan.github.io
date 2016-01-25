@@ -65,15 +65,822 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-Java1" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-HTML&amp;CSS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/01/25/Java1/" class="article-date">
-  <time datetime="2016-01-25T10:32:49.000Z" itemprop="datePublished">2016-01-25</time>
+    <a href="/2016/01/25/HTML&CSS/" class="article-date">
+  <time datetime="2016-01-25T10:43:13.000Z" itemprop="datePublished">2016-01-25</time>
 </a>
     
   </div>
   <div class="article-inner">
     
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/HTML&CSS/">HTML&amp;CSS 静态网页制作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#Make a website</p>
+<p>@(HTML &amp; CSS)</p>
+<hr>
+<p>##introduction<br>Web pages are created using HTML and CSS. What do these languages do?</p>
+<blockquote>
+<p><strong>HTML</strong> is used to establish a page’s structure. It also lets us add text, links and images.<br><strong>CSS</strong> is used to control the design and layout of the page.</p>
+</blockquote>
+<p>##HTML elements<br>HTML elements are the building blocks of web pages.</p>
+<p>The web page to the right is made up of a collection of HTML elements. Each element is outlined in blue and labeled with its name.</p>
+<p>HTML elements describe each piece of content on a web page so that the web browser knows how to display it.</p>
+<p>###Heading elements<br>Headings are described by heading elements. There are six levels of heading elements: h1 to h6.</p>
+<p>The h1 element is used to describe the main heading of the page.<br><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/heading.png" alt=""></p>
+<p>###Paragraph elements<br>Similar to a news article or a word document, headings in a web page are usually followed by paragraphs.</p>
+<p>In HTML, paragraphs are described by paragraph elements, or p elements.<br><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/p.png" alt="enter image description here"></p>
+<p>###Link elements<br>The defining feature of the Web is the presence of links. Clicking on links leads to other web pages. The a element is used to create links.</p>
+<p>The a element is similar to the h1 or p elements, but it has two key differences:</p>
+<p>First, it has an <strong>href</strong> attribute which equals the website you want to link to.<br>Second, you get to choose the link text that users see on the page.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/a.png" alt="enter image description here"></p>
+<p>###Image elements<br>In addition to headings and paragraphs, a web page can have images. The img element is used to add images to a page.</p>
+<p>The img element has an attribute inside the opening “&lt; img &gt;” tag named src. The src attribute has the address of the image.<br><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/img.png" alt="enter image description here"></p>
+<p>###List elements<br>In addition to paragraphs and images, content can be presented as lists.</p>
+<p>In HTML, a bulleted list is described using a ul element. Each item in the list is placed inside an li element.<br><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/ul-li.png" alt="enter image description here"></p>
+<p><img src="/./屏幕快照 2016-01-22 下午5.24.44.png" alt="Alt text"></p>
+<p>###DIV<br><img src="http://i4.tietuku.com/9e08f7941f8aade8.png" alt=""><br><img src="http://i4.tietuku.com/53d35ed7b6b92def.png" alt=""><br><img src="http://i8.tietuku.com/aaa16c149ad268a4.png" alt=""></p>
+<p>##CSS<br>    h1 {<br>      color: red;<br>    }<br>作用更改header1的颜色；</p>
+<p>###CSS Rules<br><img src="http://i8.tietuku.com/b6ed124c7f8b3dc9.png" alt=""></p>
+<p>####color<br>关于selector， 这个selector可以是HTML中的elements，如h1, p之类的。也可以是之前div中的class。<br>e.g. <div class="header">…….</div></p>
+<pre><code>  .header {
+color: blue;
+  }
+</code></pre><p>请注意header前有一个<strong>“.”</strong></p>
+<p><img src="http://i8.tietuku.com/0695ed010d682ed2.png" alt=""></p>
+<p>####font-family<br>The font-family property sets the font of an HTML element’s text.</p>
+<p>Three fonts commonly used with font-family are:</p>
+<p>font-family: Arial, Helvetica, sans-serif;<br>font-family: “Times New Roman”, Times, serif;<br>font-family: “Courier New”, Courier, monospace;<br>Google Fonts is a free collection of over 600 more web fonts that you can use on your page.</p>
+<pre><code>e.g.:
+.jumbotron h1 {
+  color: red;
+  font-family: &apos;Open Sans&apos;, sans-serif;
+}
+</code></pre><p>sans-serif无衬线字体，是一类字体，它在操作系统或者浏览器里是可以设置的，你可以把它设置成宋体，也可以设置成微软雅黑，而设置的这种字体肯定是当前系统里存在的字体，所以使用这个字体就一肯能显示出来，所以加上sans-serif就能保证调用。</p>
+<p>####font-size<br>The font-size property sets the size of an HTML element’s text.</p>
+<p>Text size can be measured in pixels, ems, or rems. We will use pixels here.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/font-size-hint.png" alt="enter image description here"></p>
+<p>####background-color<br>The background-color property sets the color for the background of an HTML element.</p>
+<pre><code>e.g.:
+.jumbotron {
+  background-color: #0099cc;
+}
+</code></pre><p>####background-image<br>Instead of a solid color, the background-image property sets an image as the background of an HTML element.</p>
+<pre><code>.jumbotron {
+  background-image: url(&apos;https://goo.gl/ODpi3y&apos;);
+}
+</code></pre><p>####border<br>The border property sets the width, style, and color of an element’s border.</p>
+<pre><code>.jumbotron h1 {
+  border: 3px solid #cc0000;
+}
+</code></pre><blockquote>
+<p>This changes the border width to 3px, the border style to solid, and the border color to #cc0000.</p>
+</blockquote>
+<p>####padding<br>The padding property creates space between the content and border of an element. This whitespace is useful in order to improve readability and organization of the page.</p>
+<p>The padding property sets the padding on all sides. It’s possible to set the padding on each side.</p>
+<p>The properties padding-top, padding-bottom, padding-left, and padding-right are available to set the padding on each side of an HTML element.</p>
+<pre><code>.jumbotron h1 {
+  padding: 23px;
+  border: 3px solid #ffffff;
+}
+
+.jumbotron h1 {
+  padding-top: 10px;
+  padding-bottom: 23px;
+  border: 3px solid #ffffff;
+}
+</code></pre><p>####margin<br>The margin property creates space for multiple HTML elements. The margin is a transparent area outside the border of an element.</p>
+<p>The margin property sets the margin on all sides. It’s possible to set the margin on each side.</p>
+<p>The properties margin-top, margin-bottom, margin-left, and margin-right are available to set the margin on each side of an HTML element.</p>
+<pre><code>.jumbotron h1 {
+  margin: 14px;
+  border: 3px solid #ffffff;
+}
+
+.jumbotron h1 {
+  margin-top: 10px;
+  margin-left: 23px;
+  border: 3px solid #ffffff;
+}
+</code></pre><p>The properties margin-left, and margin-right are available to set the margin on either side of an HTML element. If one of these properties is set to auto, then it will take as much as possible.</p>
+<p>To move the HTML element to the far left of the screen, use margin-right: auto. This will maximize the amount of space there is on the right side margin, pushing the element to the far left.</p>
+<p>To center an element, set margin-right: auto and margin-left: auto. The margin to the left and right will be equal and the element will be centered.</p>
+<p>###head and link<br><img src="http://i8.tietuku.com/2ff2b34ab32a1ef7.png" alt=""></p>
+<p>##Summary</p>
+<p>HTML和 CSS是如何配合起来使用的，其实是有两个文件。 HTML只负责网页构架， CSS负责美工， 通过div 那些名词联系起来， 改变那些颜色等等。</p>
+<p><a href="https://www.codecademy.com/courses/web-beginner-en-4lw13/0/1?content_from=make-a-website:css-properties-box" target="_blank" rel="external">codecademy中的例子</a></p>
+<p><img src="http://i8.tietuku.com/d02db3bf7db03b28.png" alt=""><br>如图就是用CSS语言编辑HTML， 其中text-transform: uppercase; 变大写 是之前没有介绍过的；</p>
+<p>##CSS Layout</p>
+<p>###display<br>CSS treats HTML elements like boxes. A box can be “block” or “inline”.</p>
+<p>Block elements display on a new line (e.g., h1, p, ul, li).<br>Inline elements display on the same line as their neighboring elements (e.g., img, a)<br>It’s possible to change whether a box is block or inline by using the display property.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/display.svg" alt="enter image description here"></p>
+<p>block: 像列表一样的items<br>inline：一行items</p>
+<p>###position<br>The position property is used to move an HTML element to a precise position on the page.</p>
+<p>By setting position: relative, you can use the CSS properties top, left, bottom, and right to shift an element away from where it would have normally appeared on the page.</p>
+<p><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/position.svg" alt="enter image description here"></p>
+<p>###float<br>The float property moves an element to the far left or far right of the page.</p>
+<p>For example, setting float: right pulls an element to the far right side of the page, and the surrounding text wraps around it.<br><img src="https://s3.amazonaws.com/codecademy-content/courses/ltp/img/2/float.svg" alt="enter image description here"></p>
+<p>##Bootstrap<br><img src="http://i4.tietuku.com/f560417a36ffc816.png" alt=""></p>
+<p>##Adding Bootstrap<br>Bootstrap is a CSS framework used to build pages faster. Bootstrap provides a lot of useful CSS out of the box. Check out the Bootstrap file at “<a href="http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css" target="_blank" rel="external">http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css</a>“ - it has CSS properties and values, many of which you’ve seen already, to style HTML.</p>
+<p>To use Bootstrap in a web page, you need to link to it from index.html.</p>
+<pre><code>&lt;head&gt;
+  &lt;link href=&quot;http://s3.amazonaws.com/codecademy-content/courses/ltp/css/shift.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;http://s3.amazonaws.com/codecademy-content/courses/ltp/css/bootstrap.css&quot;&gt;
+  &lt;link rel=&quot;stylesheet&quot; href=&quot;main.css&quot; &gt;
+&lt;/head&gt;
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/HTML&CSS/" data-id="cijtuity70007a39kor3aydj1" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-继承" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/继承/" class="article-date">
+  <time datetime="2016-01-25T10:42:16.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/继承/">Java学习 继承</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#继承</p>
+<p>@(Java预习)</p>
+<hr>
+<p>对理解继承来说，最重要的事情是，知道哪些东西被继承了，或者说，子类从父类那里得到了什么。答案是：所有的东西，所有的父类的成员，包括变量和方法，都成为了子类的成员，除了构造方法。构造方法是父类所独有的，因为它们的名字就是类的名字，所以父类的构造方法在子类中不存在。除此之外，子类继承得到了父类所有的成员。<br>但是得到不等于可以随便使用。每个成员有不同的访问属性，子类继承得到了父类所有的成员，但是不同的访问属性使得子类在使用这些成员时有所不同：有些父类的成员直接成为子类的对外的界面，有些则被深深地隐藏起来，即使子类自己也不能直接访问。下表列出了不同访问属性的父类成员在子类中的访问属性：</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">父类成员访问属性</th>
+<th style="text-align:center">在父类中的含义</th>
+<th style="text-align:center">在子类中的含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">public</td>
+<td style="text-align:center">对所有人开放</td>
+<td style="text-align:center">对所有人开放</td>
+</tr>
+<tr>
+<td style="text-align:center">protected</td>
+<td style="text-align:center">只有包内其它类、自己和子类可以访问</td>
+<td style="text-align:center">只有包内其它类、自己和子类可以访问</td>
+</tr>
+<tr>
+<td style="text-align:center">缺省</td>
+<td style="text-align:center">只有包内其它类可以访问</td>
+<td style="text-align:center">如果子类与父类在同一个包内：只有包内其它类可以访问<br>否则：相当于private，不能访问</td>
+</tr>
+<tr>
+<td style="text-align:center">private</td>
+<td style="text-align:center">只有自己可以访问</td>
+<td style="text-align:center">不能访问</td>
+</tr>
+</tbody>
+</table>
+<p>public的成员直接成为子类的public的成员，protected的成员也直接成为子类的protected的成员。Java的protected的意思是包内和子类可访问，所以它比缺省的访问属性要宽一些。而对于父类的缺省的未定义访问属性的成员来说，他们是在父类所在的包内可见，如果子类不属于父类的包，那么在子类里面，这些缺省属性的成员和private的成员是一样的：不可见。父类的private的成员在子类里仍然是存在的，只是子类中不能直接访问。我们不可以在子类中重新定义继承得到的成员的访问属性。如果我们试图重新定义一个在父类中已经存在的成员变量，那么我们是在定义一个与父类的成员变量完全无关的变量，在子类中我们可以访问这个定义在子类中的变量，在父类的方法中访问父类的那个。尽管它们同名但是互不影响。</p>
+<p>在构造一个子类的对象时，父类的构造方法也是会被调用的，而且父类的构造方法在子类的构造方法之前被调用。在程序运行过程中，子类对象的一部分空间存放的是父类对象。因为子类从父类得到继承，在子类对象初始化过程中可能会使用到父类的成员。所以父类的空间正是要先被初始化的，然后子类的空间才得到初始化。在这个过程中，如果父类的构造方法需要参数，如何传递参数就很重要了。</p>
+<p>##面向对象程序设计语言有三大特性：封装、继承和多态性<br>继承提供了代码重用和程序组织的有力工具<br>用来做基础派生其它类的那个类叫做父类、超类或者基类，而派生出来的新类叫做子类</p>
+<p>##子类父类关系</p>
+<pre><code>class ThisClass extends SuperClass {...}
+</code></pre><p>Java 的继承只允许单继承，即一个类只能有一个父类</p>
+<p>##一个继承的例子（包括了extends super等用法）</p>
+<pre><code>// Database.java
+import java.util.ArrayList;
+
+public class Database {
+    private ArrayList&lt;Item&gt; listItem = new ArrayList&lt;Item&gt;();
+
+    public void add(Item item) {
+        listItem.add(item);
+    }
+
+    public void list() {
+        for (Item item: listItem) {
+            item.print();
+        }
+    }
+
+    public static void main(String[] args) {
+        Database db = new Database();
+        db.add(new MP3(&quot;abc&quot;, &quot;Amy&quot;, 360, &quot;Haha&quot;));
+        db.add(new CD(&quot;def&quot;, &quot;John&quot;, 5, 120, &quot;Hehe&quot;));
+        db.add(new DVD(&quot;xxx&quot;, &quot;Jane&quot;, 240, &quot;Heihei&quot;));
+        db.list();
+    }
+}
+// DISPLAY:
+// MP3:abc: Amy
+// CD:def: John
+// DVD:xxx: Jane
+
+// Item.java
+public class Item {
+    public String title;
+    public String author;
+    public int playingTime;
+    public String comment;
+    public boolean gotIt = false;
+
+    public Item(String title, String author, int playingTime, String comment) {
+        // super();
+        this.title = title;
+        this.author = author;
+        this.playingTime = playingTime;
+        this.comment = comment;
+    }
+    public void print() {}
+}
+
+// CD.java
+public class CD extends Item {
+    private int numOfTracks;
+    public CD(String title, String author, int numOfTracks, int playingTime, String comment) {
+        super(title, author, playingTime, comment);
+        this.numOfTracks = numOfTracks;
+    }
+
+    public void print() {
+        System.out.println(&quot;CD:&quot; + title + &quot;: &quot; + author);
+    }
+}
+
+// DVD.java
+public class DVD extends Item {
+    public DVD(String title, String author, int playingTime, String comment) {
+        super(title, author, playingTime, comment);
+    }
+
+    public void print() {
+        System.out.println(&quot;DVD:&quot; + title + &quot;: &quot; + author);
+    }
+}
+
+// MP3.java
+public class MP3 extends Item {
+
+    public MP3(String title, String author, int playingTime, String comment) {
+        super(title, author, playingTime, comment);
+    }
+
+    public void print() {
+        System.out.println(&quot;MP3:&quot; + title + &quot;: &quot; + author);
+    }
+}
+</code></pre><p>##Java中的单继承</p>
+<ol>
+<li>Java是单继承的，即一个子类只能有一个父类；有些其他的编程语言是多继承的；</li>
+<li>比如Car类 的子类是Bus类，这个时候再增加一个类叫做ElectronicBus， 是继承Bus类的，只不过多了车厢数量， 那么现在形成的关系是多次继承。 Car类就像爷爷一样，这时候Car是祖先类，Java是允许多次一直继承下去的。</li>
+</ol>
+<p>##在创造了一个子类的同时，也创造了一个父类！</p>
+<p>子类的创建会同时创建父类，那就是类的构造方法！他会调用那个构造函数！<br>具体例子详见P262；</p>
+<p>##Super关键字！<br>super关键字可以在子类构造方法中使用，用来指定调用父类中的某个构造方法， 其语法如下：<br>super(参数值列表);<br>这里的参数值列表必须与父类中的某个构造函数匹配，看上去和使用this关键字调用同一个类中不同构造函数的语法是相同的；</p>
+<pre><code>e.g. 以下代码是等价的；
+代码1：
+public class Sportscar extends Car{
+    public int nAmount = 90;
+    public SportsCar(){
+        System.out.println(&quot;SportsCar类的构造方法被调用了！&quot;)
+    }
+    //其他内容被省略
+}
+
+代码2：
+    public class Sportscar extends Car{
+    public int nAmount = 90;
+    public SportsCar(){
+        super（）；//调用父类中无参数的构造方法；
+        System.out.println(&quot;SportsCar类的构造方法被调用了！&quot;)
+    }
+    //其他内容被省略
+}
+</code></pre><p>###记得给类一个无参数的构造方法<br>如果某一个父类已经定义了另一种有参数的构造方法，那么按照Java编译器的规则， 就不会再自动创建一个无参数的构造方法，那么super();就会出错。<br>因此，遇到这种情况，要自己定义一个无参数的构造函数，有两个构造函数也是允许的。</p>
+<p>###调用父类中的构造方法；<br>那么有不有可能调用父类的有参数的构造方法？<br>之前super();调用了一个没参数的构造函数；<br>那么同理，把参数写在Super里面，就可以调用有参数的构造函数了。</p>
+<p>e.g.  初始化的时候 new sportscar(“红色”，“法拉利”，“200”)；</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/继承/" data-id="cijtuitxm0000a39kviatn32l" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-对象容器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/对象容器/" class="article-date">
+  <time datetime="2016-01-25T10:41:49.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/对象容器/">Java学习 对象容器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>#对象容器</p>
+<p>@(Java预习)</p>
+<hr>
+<p>##顺序容器<br>即放进容器中的对象是按照指定的顺序（放的顺序）排列起来的，而且允许具有相同值的多个对象存在。</p>
+<pre><code>范型类：import java.util.ArrayList;
+private ArrayList&lt;String&gt; test = new ArrayList&lt;String&gt;();
+</code></pre><p>类名：ArrayList<br>它是一种容器，用来存放 String 的 ArrayList<br>容器类有两个类型：<br>容器的类型: e.g. ArrayList<br>元素的类型: e.g. String<br>顺序容器，即放进容器中的对象是按照指定的顺序（放的顺序）排列起来的，而且允许具有相同值的多个对象存在</p>
+<p>###ArrayList 的操作</p>
+<ol>
+<li>xxx.add(string);</li>
+<li>xxx.size();</li>
+<li>xxx.get(index);</li>
+<li>xxx.add(index, string);</li>
+<li>xxx.remove(index);</li>
+<li>xxx.toArray(string);</li>
+</ol>
+<p>##对象数组<br>所谓对象数组就是String[];<br>从之前C语言的知识可以知道，这个数组里面每一个元素都是一个字符串的管理者，它指向字符串（java里面没有指针）；</p>
+<p>对象数组（区别于基础类型的数组）中的每一个元素其实只是对象的管理者而不是对象本身，因此仅仅创建数组并没有创建其中的每一个对象</p>
+<p>用 for-each 循环也是可以遍历的，但如果在循环内调用对象中可以改变对象的成员函数时，将会改变对象数组中元素所管理的对象</p>
+<p>###集合容器（Set）</p>
+<p>集合（Set）：所有的元素都具有唯一的值，元素在其中没有顺序</p>
+<pre><code>导入类库：import java.util.HashSet;
+HashSet&lt;String&gt; s = new HashSet&lt;String&gt;();
+</code></pre><p><img src="http://i4.tietuku.com/bcf185fad6b72b34.png" alt=""><br>如图set里放入三个元素，但是有重复，所以只会发现只有两个元素</p>
+<p>eg:</p>
+<pre><code>// Import system classes:
+import java.util.ArrayList;
+import java.util.HashSet;
+
+class Value {
+    private int i;
+    public void set(int i) {
+        this.i = i;
+    }
+    public int get() {
+        return i;
+    }
+
+    // This function could use this function to print directly:
+    public String toString() {
+        return &quot;&quot; + i;
+    }
+}
+
+public class NoteBook {
+
+    private ArrayList&lt;String&gt; notes = new ArrayList&lt;String&gt;();
+
+    public void add(String s) {
+        notes.add(s);
+    }
+
+    public void add(String s, int location) {
+        notes.add(location, s);
+    }
+
+    public int getSize() {
+        return notes.size();
+    }
+
+    public String getNote(int index) {
+        return notes.get(index);
+    }
+
+    public void removeNote(int index) {
+        notes.remove(index);
+    }
+
+    public String[] list() {
+        // String variable is a manager, not owner;
+        // Strings array is mangers:
+        String[] a = new String[notes.size()];
+//        for (int i = 0; i &lt; notes.size(); i++) {
+//            a[i] = notes.get(i);
+//        }
+
+        notes.toArray(a);
+        return a;
+    }
+
+    public static void main(String[] args) {
+        // TODO Auto-generated method stub
+
+//        NoteBook nb = new NoteBook();
+//        nb.add(&quot;111&quot;);
+//        nb.add(&quot;222&quot;);
+//        nb.add(&quot;333&quot;, 1);
+//        nb.removeNote(1);
+//        System.out.println(nb.getSize());
+//        System.out.println(nb.getNote(2));
+//        String[] a = nb.list();
+//        for (String s: a) {
+//            System.out.println(s);
+//        }
+
+//        String[] a = new String[10];
+        // a[0] == null;
+//        System.out.println(a[0]);
+
+//        Value[] a = new Value[10];
+//        for (int i = 0; i &lt; a.length; i++) {
+//            a[i] = new Value();
+//            a[i].set(i);
+//        }
+//        
+//        for (Value v: a) {
+//            System.out.println(v.get());
+            // Attention:
+            // It could change the object which the manager managed:
+//            v.set(0);
+//        }
+
+//        for (Value v: a) {
+//            System.out.println(v.get());
+//        }
+
+//        int[] ia = new int[10];
+//        for (int i = 0; i &lt; ia.length; i++) {
+//            ia[i] = i;
+//        }
+
+        // for-each loop:
+//        for (int k: ia) {
+            // Each k is copy of former k, so this sentence can&apos;t change the real k:
+//            k++;
+//            System.out.println(k);
+//        }
+
+        // We could use the for-each loop in &quot;ArrayList&quot; class:
+        ArrayList&lt;String&gt; a = new ArrayList&lt;String&gt;();
+        a.add(&quot;111&quot;);
+        a.add(&quot;222&quot;);
+        a.add(&quot;111&quot;);
+//        for (String s: a) {
+//            System.out.println(s);
+//        }
+        System.out.println(a);
+        // DISPLAY:
+        // [111, 222, 111]
+        System.out.println(&quot;---&quot;);
+        HashSet&lt;String&gt; s = new HashSet&lt;String&gt;();
+        s.add(&quot;111&quot;);
+        s.add(&quot;222&quot;);
+        s.add(&quot;111&quot;);
+        // It could be printed by the object name directly:
+        // Because of &quot;toString()&quot;:
+        System.out.println(s);
+        // [...] means it&apos;s a container:
+        // DISPLAY:
+        // [111, 222]
+
+        Value v = new Value();
+        v.set(10);
+        System.out.println(v);
+        // 1_DISPLAY(Without toString())
+        // Value@15db9742
+
+        // 2_DISPLAY
+        // 10
+    }
+}
+</code></pre><p>###Hash 表</p>
+<p>Hash 表（又译散列表）：传统意义上的 Hash 表，是能以 int 做值，将数据存放起来的数据结构<br>Java 的 Hash 表可以以任何实现了 hash() 函数的类的对象做值来存放对象</p>
+<pre><code>导入类库：import java.util.HashMap;
+private HashMap&lt;Integer, String&gt; coinnames = new HashMap&lt;Integer, String&gt;();
+</code></pre><p>##tostring这种方法的重要性！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/对象容器/" data-id="cijtuity00002a39kl7k6ijel" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-类的存放问题" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/类的存放问题/" class="article-date">
+  <time datetime="2016-01-25T10:40:36.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/类的存放问题/">Java学习 类和对象</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>用类制造对象</p>
+<p>##建立对象</p>
+<p>@(Java预习)</p>
+<p>格式：</p>
+<pre><code>// Take the &quot;shapes.zip&quot; as example:
+// &lt;CLASS&gt; &lt;OBJECT&gt; = new &lt;CLASS&gt;(...);
+
+Rectangle r = new Rectangle(1, 1, 100, 100);
+Circle c = new Circle(1, 1, 50)
+</code></pre><p>笔记：</p>
+<p>类和对象的关系：</p>
+<p>类定义了对象长什么样，对象则是按照类的定义所制造出来的实体，一个类可以创建很多对象，每个对象有自己的数据</p>
+<p><strong>封装</strong>：将数据和对数据的操作放在一起</p>
+<p>##定义类</p>
+<p>格式：</p>
+<pre><code>// &lt;CLASS&gt; &lt;OBJECT&gt; = new &lt;CLASS&gt;();
+public class Test {
+    ...
+    // It can declare member variables &amp; member functions here.
+    }
+    public static void main(String[] args) {
+        Test t1 = new Test();
+        Test t2 = new Test();
+        // t1 is different from t2.
+    }
+}
+</code></pre><p>笔记：</p>
+<p>对象变量是对象的管理者，而非所有者（如同数组变量、字符串）</p>
+<p>我们可以使用 . 点操作符来让对象做些事情</p>
+<p>class 具有成员变量 &amp; 成员函数</p>
+<p>##成员变量和成员函数</p>
+<p>笔记：</p>
+<p>写在类里的成员变量，只是一个声明，变量并不在那里，变量不在类里，变量在每一个对象里</p>
+<p>类定义了对象中所具有的变量，即成员变量</p>
+<p>成员函数可以直接访问成员变量</p>
+<p>成员函数可以通过点操作符 . 来被其对象调用</p>
+<p>在同一个类中，成员函数可以直接调用其它成员函数，而不需要使用 . 操作符（this 是可选择的）</p>
+<p>this 是成员函数的一个特殊的固有的本地变量，它表达了调用这个函数的那个对象</p>
+<p>###本地变量：</p>
+<p>定义在函数的变量（在外部为成员变量）</p>
+<p>其生存期和作用域都是函数内部</p>
+<p>###成员变量：<br>其生存期是对象的生存期</p>
+<p>生存期起始于 new 对象时，不需要关心什么时候消失（Java 具有自动垃圾回收机制）</p>
+<p>其作用域是类内部的成员函数<br><img src="http://i4.tietuku.com/d7888cfaee12c027.png" alt=""></p>
+<p>##对象初始化</p>
+<p>笔记：</p>
+<p>Java 有许多方法来初始化对象：</p>
+<blockquote>
+<p>默认 0 值：</p>
+<p>int – 0</p>
+<p>float – 0.0</p>
+<p>boolean – false</p>
+<p>Object – null</p>
+</blockquote>
+<p>###直接赋值；<br>使用成员函数</p>
+<p>使用已经初始化的变量</p>
+<p>构造函数（可以使用 debug 的断点功能查看详细顺序）</p>
+<blockquote>
+<p>构造函数是一种特殊的和类名相同的函数！<br><img src="http://i4.tietuku.com/c294d5aa2a388462.png" alt=""><br><img src="http://i4.tietuku.com/f8f85f6ee96f391f.png" alt=""></p>
+</blockquote>
+<p>这个this.price = price 是一种Java语法，可以在一个构造函数中调用另一个同类的构造函数</p>
+<p>当使用这种方法的时候，只能出现在构造函数的第一行</p>
+<p>###函数重载：(overload)<br>一个类可能有多个构造函数，只要其参数表不同</p>
+<p>创建对象的时候给出不同的参数值，就会自动调用不同的构造函数<br>通过 this() 还可以调用其它构造函数</p>
+<p>一个类里的同名但参数表不同的函数构成了重载关系</p>
+<p>###重载容易发生误解和错误的两个地方——返回类型和形参名<br>    for example :<br>    两个方法签名一样的方法<br>    public long buyThings(int amount, int price);<br>    public int buyThings(int amount, int price);<br>    方法签名都是(int, int)是一样的<br>    但是由于返回类型不一样，Java它不知道执行哪一个 所以是错误的</p>
+<pre><code>for example :
+两个形参名“貌似”不一样的方法
+public int buyThings(int amount, int price);
+public int buyThings(int price, int amount);
+其实两个方法签名都是buyThings(int,int);
+也是错误的，一些初级面试题中可能有这种题目！
+
+Summary：
+方法的签名与方法的返回值无关；
+方法的签名与方法的形参姓名无关；
+</code></pre><p>###重载中的最难点——参数匹配原则<br>    for example:<br>    有一对方法 raiseSpeed（int speed）;<br>    raiseSpeed(double speed);<br>    你传入了raiseSpeed(70);<br>    那么这时候他会执行哪一个方法呢？</p>
+<pre><code>他会执行低精度的，which is raiseSpeed (int)的方法；
+因为！ 赋值规则就是低精度的可以赋值给高精度或者同精度的变量
+而高精度的却不能赋值给低精度的！
+</code></pre><p>##访问属性<br><img src="http://i8.tietuku.com/7bbd247630a8da05.png" alt=""></p>
+<p>##包 package<br><img src="http://i8.tietuku.com/f5ea447e03e2d2bd.png" alt=""></p>
+<p>##static 类变量<br>属于被类所属的变量</p>
+<p>类变量和类函数</p>
+<p>类是描述，对象是实体。在类里所描述的成员变量，是位于这个类的每一个对象中的</p>
+<p>而如果某个成员有 static 关键字做修饰，它就不再属于每一个对象，而是属于整个类的了</p>
+<p>通过每个对象都可以访问到这些类变量和类函数（<object name="">.<variable>），但是也可以通过类的名字来访问它们（<class name="">.<variable>）</variable></class></variable></object></p>
+<p>类函数由于不属于任何对象，因此也没有办法建立与调用它们的对象的关系，就不能访问任何非 static 的成员变量和成员函数了</p>
+<h2 id="23_23_u4ECE_u53E6_u4E00_u672C_u4E66_u91CC_u6574_u7406_u51FA_u6765_u7684_u6CE8_u610F_u70B9"><a href="#23_23_u4ECE_u53E6_u4E00_u672C_u4E66_u91CC_u6574_u7406_u51FA_u6765_u7684_u6CE8_u610F_u70B9" class="headerlink" title="##从另一本书里整理出来的注意点"></a>##从另一本书里整理出来的注意点</h2><h3 id="u7C7B_u7684_u5B58_u653E_u95EE_u9898"><a href="#u7C7B_u7684_u5B58_u653E_u95EE_u9898" class="headerlink" title="类的存放问题"></a>类的存放问题</h3><ol>
+<li>Java语言的源代码是以类为单位存放在文件中的，也就是说 一个类的内容不能出现在两个文件里；</li>
+<li>在一个源文件里，必须有且只能有一个public的类；一个源文件（<em>*</em>.java）内的内容是“一个public类”+”0个或者多个不是public的类”；<br>###类名</li>
+<li>类命名的习惯是首字母大写的一个或者多个单词；<br>###类的主体<br>1.类的主体的变量有两个名字，一个叫做类的“属性”（property），一个叫做类的成员变量（Member Variable）；<br>2.类中可以什么都没有，但它也是一个合法的类；<br>###理解引用 reference</li>
+<li>之前一直把类的名字称为类的变量，其实它叫做引用 reference；</li>
+<li>C语言中我们有指针，比如用于交换两个int变量可以用swap();函数，但是这一点在Java中是不可以的，Java只能引用类<br>###局部变量（local variable）与实例变量（instance variable）<br>局部变量是定义在<strong>方法</strong>里面的变量;</li>
+</ol>
+<p>实例变量就是普通的定义在类里面的变量；</p>
+<p>局部变量只能在该方法中使用，而且java不会给他自动赋值；相反实例变量可以在这个类的所有方法中使用而且会有默认的初始值，如int为0，boolean为false等</p>
+<p>所以在使用局部变量之前，必须给他赋值！局部变量之前不能加访问控制符，否则会报错；</p>
+<p>实例变量可以有访问控制符（public， private）在前面 +数据类型 +变量名；</p>
+<p>！！：万一局部变量和实例变量重名的话程序是不会报错的，而是会先局部变量，再实例变量的顺序查找；</p>
+<pre><code>public class SimpleclasstoshowThis{
+    public int a;
+    public void test(){
+        int a;
+        a = 55;
+        System.out.println(a);
+    }
+}
+</code></pre><p>改程序会输出55！</p>
+<p>###This关键字<br>从上面那个例子中，我们发现编译不会报错很好，但是改程序的实例变量 public int a 难道就不能访问了嘛。。。<br>如果要访问，则需要this 关键字了</p>
+<p>this关键字是在方法中使用，是指向对象自己的引用。 Java平台在遇到this关键字的时候，就会去使用他这个方法的调用者</p>
+<p>###构造函数/构造方法（constructor）</p>
+<ol>
+<li>构造函数没有返回值，但是构造函数内可以使用return</li>
+<li>构造函数名必须和类名一样</li>
+<li>只有同时具备以上两个条件，一个方法才是构造方法</li>
+<li>Java语言规定，一个类可以由很多的构造函数，但是至少要有一个构造函数</li>
+<li>在一个类中没有任何构造函数时，他会给这个类一个默认的、什么都不做的构造函数（注意一定要在那个类中没有构造方法时候才添加）</li>
+<li>一个类中可以有多个构造函数，他们之间是重载的关系，必须使用参数加以区分</li>
+<li>构造函数一般是完成一些初始化的工作</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/类的存放问题/" data-id="cijtuitxx0001a39kzm4r1mbo" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-java2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/java2/" class="article-date">
+  <time datetime="2016-01-25T10:39:30.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/java2/">Java学习 第二篇</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="23Java_u7B2C_u4E8C_u7BC7"><a href="#23Java_u7B2C_u4E8C_u7BC7" class="headerlink" title="#Java第二篇"></a>#Java第二篇</h2><p>##java程序结构</p>
+<blockquote>
+<p><img src="http://i4.tietuku.com/f9f6868b312e9f77.jpg" alt=""><br>类： public class Dog{<br><br>}<br></p>
+<p>方法：public class Dog{<br><br>    void bark(){<br><br>    }<br><br>}<br></p>
+<p>语句 指令： 在方法里</p>
+<p>main函数类的定义： public static void main(String[] agrs){<br>}<br></p>
+<blockquote>
+<p>main()是程序的起点，不管这个程序有多大，一定会有一个main()作为程序的起点</p>
+</blockquote>
+</blockquote>
+<p>##Java中的数组</p>
+<blockquote>
+<p>申明方式和C语言略有不同</p>
+<blockquote>
+<p>String[] course ={“SYS”,”CSF”,”PGA”};</p>
+</blockquote>
+<p>数组长度的获取</p>
+<blockquote>
+<p>int x = course.length;</p>
+</blockquote>
+<p>数组里面的元素 都是int char boolean 这样的primitive 数据类型，而数组， 是一种类！class！ 相似的还有String！</p>
+<p>数组的比较 如果直接用 “A[] == B[]”， 将只会比较这两个数组是不是指向同一个内容。除非之前有赋值过B = A; 其他即使数组里面的内容是一模一样的，也没有用，是会得到false 的结果</p>
+<p>所以数组的比较要通过遍历数组里每一个元素来对比</p>
+</blockquote>
+<p>##Java中的String<br>String “S”大写 说明这是一个类！</p>
+<blockquote>
+<p>那么string的对比和数组是一样的</p>
+<p>如果直接 == 只会判断是不是指向了一个相同的空间</p>
+<p><img src="http://i8.tietuku.com/1812899633f16bad.png" alt=""></p>
+<p>如图要用xxx.equal(“xxx”);</p>
+<p>字符串大小的比较</p>
+<p>在C语言中的“strcmp”</p>
+<p><img src="http://i8.tietuku.com/de93c3fe0d8b9eec.png" alt=""><br>其中，s1, s2可以是变量，也可以直接是字符串</p>
+<p>获取String的长度</p>
+<p>也是用.length();<br><strong>注意这比数组的.length后面多了一个括号！</strong></p>
+<p><img src="http://i8.tietuku.com/c927332202f06db0.png" alt=""></p>
+<p>访问String某一个字符</p>
+<p>.charAt();</p>
+<p><img src="http://i8.tietuku.com/78e3a37550e4a3af.png" alt=""></p>
+<p>得到子串 substring<br><img src="http://i4.tietuku.com/746bc73ee6632bb7.png" alt=""></p>
+<p>寻找字符<br><img src="http://i4.tietuku.com/16d978a19c42a78a.png" alt=""></p>
+</blockquote>
+<h2 id="23_23_u5C01_u88C5"><a href="#23_23_u5C01_u88C5" class="headerlink" title="##封装"></a>##封装</h2><p><img src="http://i8.tietuku.com/1b5f7a10b89c1114.png" alt=""></p>
+<p>数据是不对外公开的！</p>
+<p>类变量和类函数</p>
+<p>类是描述，对象是实体。在类里所描述的成员变量，是位于这个类的每一个对象中的<br>而如果某个成员有 static 关键字做修饰，它就不再属于每一个对象，而是属于整个类的了</p>
+<p>通过每个对象都可以访问到这些类变量和类函数（<object name="">.<variable>），但是也可以通过类的名字来访问它们（<class name="">.<variable>）</variable></class></variable></object></p>
+<p>类函数由于不属于任何对象，因此也没有办法建立与调用它们的对象的关系，就不能访问任何非 static 的成员变量和成员函数了</p>
+<hr>
+<p>对象 ＝ 属性 ＋ 服务</p>
+<p>数据：属性或状态</p>
+<p>操作：函数</p>
+<p>private：只有这个类内部可以访问</p>
+<p>类内部指类的成员函数和定义初始化</p>
+<p>这个限制是对类的而不是对对象的（一个类所有的不同对象之间可以互相访问其私有空间）</p>
+<p>从语言的角度，判断有没有突破私有的边界（是否访问了本不该访问的东西），是从代码的层面上看，而不是运行的层面</p>
+<p>public：任何人都可以访问</p>
+<p>任何人指的是在任何类的函数或定义初始化中可以使用<br>使用指的是调用、访问或定义变量</p>
+<p>类前的 public：</p>
+<p>任何人都可以用这个类的定义来定义变量</p>
+<p>必须存在一个源代码文件中，其文件名必须和类的名字相同（但和文件名相同的类也可不加 public）</p>
+<p>friendly：即没有在一个成员前加 private 或 public 关键字<br>可以被和它位于同一个包的其它类访问</p>
+<p>编译单元：一个 .java 文件<br>可以包含多个类，但至多有一个 public 类</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/01/25/java2/" data-id="cijtuity20003a39k1twjtt7f" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Java1" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/01/25/Java1/" class="article-date">
+  <time datetime="2016-01-25T10:38:26.000Z" itemprop="datePublished">2016-01-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/01/25/Java1/">Java学习 第一篇</a>
+    </h1>
+  
+
+      </header>
     
     <div class="article-entry" itemprop="articleBody">
       
@@ -115,7 +922,7 @@ public class Hello {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/25/Java1/" data-id="cijtu8fx500008z9k2c4th8ti" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/25/Java1/" data-id="cijtuity50006a39k6idtu0s0" class="article-share-link">Share</a>
       
       
     </footer>
@@ -321,7 +1128,7 @@ public class Hello {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/25/SQL from codecademy/" data-id="cijtu8fxl00028z9k82rm43x7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/25/SQL from codecademy/" data-id="cijtuity40005a39kwqg6kvak" class="article-share-link">Share</a>
       
       
     </footer>
@@ -366,7 +1173,7 @@ public class Hello {
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/25/hello-world/" data-id="cijtu8fxd00018z9kqei3b028" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/25/hello-world/" data-id="cijtuity30004a39ka5yriuyz" class="article-share-link">Share</a>
       
       
     </footer>
@@ -391,7 +1198,7 @@ public class Hello {
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">一月 2016</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
@@ -403,15 +1210,23 @@ public class Hello {
       <ul>
         
           <li>
-            <a href="/2016/01/25/Java1/">(no title)</a>
+            <a href="/2016/01/25/HTML&CSS/">HTML&amp;CSS 静态网页制作</a>
           </li>
         
           <li>
-            <a href="/2016/01/25/SQL from codecademy/">SQL笔记</a>
+            <a href="/2016/01/25/继承/">Java学习 继承</a>
           </li>
         
           <li>
-            <a href="/2016/01/25/hello-world/">Hello World</a>
+            <a href="/2016/01/25/对象容器/">Java学习 对象容器</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/类的存放问题/">Java学习 类和对象</a>
+          </li>
+        
+          <li>
+            <a href="/2016/01/25/java2/">Java学习 第二篇</a>
           </li>
         
       </ul>
